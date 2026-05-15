@@ -234,6 +234,17 @@ let touchStartX = 0;
 let touchTriggered = false;
 let touchIntentLocked = false; // true = we own this gesture
 
+// window.addEventListener(
+//   "touchstart",
+//   function (e) {
+//     touchStartY = e.touches[0].clientY;
+//     touchStartX = e.touches[0].clientX;
+//     touchTriggered = false;
+//     touchIntentLocked = false;
+//   },
+//   { passive: true }, 
+// );
+
 window.addEventListener(
   "touchstart",
   function (e) {
@@ -241,8 +252,22 @@ window.addEventListener(
     touchStartX = e.touches[0].clientX;
     touchTriggered = false;
     touchIntentLocked = false;
+
+    // If we're at a snap point, immediately claim the gesture
+    // so the browser NEVER starts native scrolling
+    const y = window.scrollY;
+    const pastHero = y >= endOfHero() - 2;
+    const atIbLanding = isAtIbLanding();
+    const atMLogo = isAtMLogo();
+
+    const isAtSnapPoint = !pastHero || atIbLanding || atMLogo;
+
+    if (isAtSnapPoint && !reduceMotion && !isCampusRevealLocked()) {
+      e.preventDefault(); // Block native scroll from the very first touch
+      touchIntentLocked = true;
+    }
   },
-  { passive: true }, // touchstart can stay passive
+  { passive: false }, // MUST be false to allow preventDefault on touchstart
 );
 
 window.addEventListener(
