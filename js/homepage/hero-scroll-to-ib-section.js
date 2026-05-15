@@ -228,67 +228,89 @@
   );
 
   // ─── Touch (real mobile devices) ─────────────────────────────────────────────
+// ─── Touch (real mobile devices) ─────────────────────────────
 
-  const SWIPE_THRESHOLD = 30; // minimum px swipe distance to trigger snap
+const SWIPE_THRESHOLD = 50;
 
-  let touchStartY = 0;
-  let touchStartX = 0;
+let touchStartY = 0;
+let touchStartX = 0;
+let touchTriggered = false;
 
-  window.addEventListener(
-    "touchstart",
-    function (e) {
-      touchStartY = e.touches[0].clientY;
-      touchStartX = e.touches[0].clientX;
-    },
-    { passive: true },
-  );
+window.addEventListener(
+  "touchstart",
+  function (e) {
+    touchStartY = e.touches[0].clientY;
+    touchStartX = e.touches[0].clientX;
+    touchTriggered = false;
+  },
+  { passive: true },
+);
 
-  window.addEventListener(
-    "touchend",
-    function (e) {
-      if (reduceMotion) return;
-      if (isCampusRevealLocked()) return;
-      if (lockScroll) return;
+window.addEventListener(
+  "touchmove",
+  function (e) {
+    if (reduceMotion) return;
+    if (isCampusRevealLocked()) return;
+    if (lockScroll) return;
+    if (touchTriggered) return;
 
-      const deltaY = touchStartY - e.changedTouches[0].clientY;
-      const deltaX = touchStartX - e.changedTouches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const currentX = e.touches[0].clientX;
 
-      // Ignore horizontal swipes (e.g. carousels)
-      if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+    const deltaY = touchStartY - currentY;
+    const deltaX = touchStartX - currentX;
 
-      // Ignore swipes that are too short
-      if (Math.abs(deltaY) < SWIPE_THRESHOLD) return;
+    // Ignore horizontal swipes
+    if (Math.abs(deltaX) > Math.abs(deltaY)) return;
 
-      const y = window.scrollY;
-      const pastHero = y >= endOfHero() - 2;
+    // Ignore tiny swipes
+    if (Math.abs(deltaY) < SWIPE_THRESHOLD) return;
 
-      /* Swipe up (finger up = scroll down) from hero → IB landing */
-      if (deltaY > 0 && !pastHero) {
-        animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-top");
-        return;
-      }
+    const y = window.scrollY;
+    const pastHero = y >= endOfHero() - 2;
 
-      /* Swipe up from IB landing → M Logo */
-      const ibScrolled = document.querySelector(
-        ".ib-bilingual-school-leaf-scrolled",
+    // Prevent native scrolling
+    e.preventDefault();
+
+    touchTriggered = true;
+
+    /* Swipe up → IB landing */
+    if (deltaY > 0 && !pastHero) {
+      animateWindowScrollTo(
+        scrollYAtArtworkPngStart(),
+        "to-ib-from-top",
       );
-      if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
-        animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
-        return;
-      }
+      return;
+    }
 
-      /* Swipe down (finger down = scroll up) from M Logo → IB landing */
-      if (deltaY < 0 && isAtMLogo()) {
-        animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
-        return;
-      }
+    /* Swipe up → M logo */
+    const ibScrolled = document.querySelector(
+      ".ib-bilingual-school-leaf-scrolled",
+    );
 
-      /* Swipe down from IB landing → hero */
-      if (deltaY < 0 && pastHero && isAtIbLanding()) {
-        animateWindowScrollTo(0, "to-hero");
-        return;
-      }
-    },
-    { passive: true },
-  );
+    if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
+      animateWindowScrollTo(
+        scrollYAtMLogoStart(),
+        "to-mlogo",
+      );
+      return;
+    }
+
+    /* Swipe down → IB landing */
+    if (deltaY < 0 && isAtMLogo()) {
+      animateWindowScrollTo(
+        scrollYAtArtworkPngStart(),
+        "to-ib-from-bottom",
+      );
+      return;
+    }
+
+    /* Swipe down → Hero */
+    if (deltaY < 0 && pastHero && isAtIbLanding()) {
+      animateWindowScrollTo(0, "to-hero");
+      return;
+    }
+  },
+  { passive: false },
+);
 })();
