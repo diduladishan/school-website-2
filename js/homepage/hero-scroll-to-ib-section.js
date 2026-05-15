@@ -284,49 +284,41 @@ window.addEventListener(
     // Ignore horizontal swipes
     if (Math.abs(deltaX) > Math.abs(deltaY)) return;
 
-    // Once we've decided to own this gesture, keep blocking native scroll
+    // Always block native scroll if we own the gesture
     if (touchIntentLocked) {
       e.preventDefault();
-      return;
     }
 
-    // Not enough movement yet
+    // Not enough movement yet to determine direction
     if (Math.abs(deltaY) < SWIPE_THRESHOLD) return;
 
-    if (lockScroll) {
-      // Already animating — block native scroll for the rest of this gesture
-      touchIntentLocked = true;
-      e.preventDefault();
-      return;
-    }
-
-    if (touchTriggered) return;
+    // Already fired a snap or animating — don't fire again
+    if (touchTriggered || lockScroll) return;
 
     const y = window.scrollY;
     const pastHero = y >= endOfHero() - 2;
-
     const ibScrolled = document.querySelector(
       ".ib-bilingual-school-leaf-scrolled",
     );
 
     let handled = false;
 
-    /* Swipe up (finger moves up = scroll down) → IB landing */
+    /* Finger moves up (scroll down) → IB landing */
     if (deltaY > 0 && !pastHero) {
       animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-top");
       handled = true;
     }
-    /* Swipe up → M logo */
+    /* Finger moves up → M logo */
     else if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
       animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
       handled = true;
     }
-    /* Swipe down (finger moves down = scroll up) → IB landing */
+    /* Finger moves down → IB landing */
     else if (deltaY < 0 && isAtMLogo()) {
       animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
       handled = true;
     }
-    /* Swipe down → Hero */
+    /* Finger moves down → Hero */
     else if (deltaY < 0 && pastHero && isAtIbLanding()) {
       animateWindowScrollTo(0, "to-hero");
       handled = true;
@@ -335,10 +327,10 @@ window.addEventListener(
     if (handled) {
       touchTriggered = true;
       touchIntentLocked = true;
-      e.preventDefault(); // Block native scroll immediately
+      e.preventDefault();
     }
   },
-  { passive: false }, // MUST be false to allow preventDefault
+  { passive: false },
 );
 
 window.addEventListener(
