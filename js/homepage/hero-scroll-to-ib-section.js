@@ -63,7 +63,7 @@
     return y > st.start + 4 && y < st.end - 4;
   }
 
-  /** At the very start of campus reveal — scroll 3 begins here */
+  /** At the very start of campus reveal — logo auto-plays after a short wait */
   function isAtCampusRevealEntry() {
     if (typeof window.ScrollTrigger !== "undefined") {
       const st = window.ScrollTrigger.getById("campus-reveal-pin");
@@ -81,11 +81,20 @@
     return false;
   }
 
-  function playCampusRevealAnimation() {
-    return (
-      typeof window.crPlayFullReveal === "function" &&
-      window.crPlayFullReveal()
-    );
+  function scheduleCampusRevealAnimation() {
+    if (typeof window.crScheduleAutoReveal === "function") {
+      window.crScheduleAutoReveal();
+    }
+  }
+
+  function cancelCampusRevealWait() {
+    if (typeof window.crCancelScheduledReveal === "function") {
+      window.crCancelScheduledReveal();
+    }
+  }
+
+  function isRevealWaiting() {
+    return !!window.crRevealWaiting;
   }
 
   function rewindCampusRevealAnimation() {
@@ -138,6 +147,9 @@
       if (mode === "to-ib-from-top") {
         window.dispatchEvent(new CustomEvent("ib-section-arrived"));
       }
+      if (mode === "to-mlogo") {
+        scheduleCampusRevealAnimation();
+      }
       unlockSnap();
       return;
     }
@@ -156,6 +168,9 @@
           if (mode === "to-ib-from-top") {
             window.dispatchEvent(new CustomEvent("ib-section-arrived"));
           }
+          if (mode === "to-mlogo") {
+            scheduleCampusRevealAnimation();
+          }
         },
         onInterrupt: function () {
           unlockSnap();
@@ -170,6 +185,9 @@
         window.setTimeout(function () {
           window.dispatchEvent(new CustomEvent("ib-section-arrived"));
         }, SNAP_DURATION * 1000);
+      }
+      if (mode === "to-mlogo") {
+        window.setTimeout(scheduleCampusRevealAnimation, SNAP_DURATION * 1000);
       }
     }
   }
@@ -251,23 +269,18 @@
         return;
       }
 
-      /* Scroll down at campus reveal entry → full logo animation (scroll 3) */
-      if (e.deltaY > 0 && isAtCampusRevealEntry()) {
-        e.preventDefault();
-        playCampusRevealAnimation();
-        return;
-      }
-
       /* Scroll up after reveal completes → rewind to entry */
       if (e.deltaY < 0 && isCampusRevealComplete()) {
         e.preventDefault();
+        cancelCampusRevealWait();
         rewindCampusRevealAnimation();
         return;
       }
 
-      /* Scroll up from campus reveal entry → IB landing */
-      if (e.deltaY < 0 && isAtCampusRevealEntry()) {
+      /* Scroll up from campus reveal entry (or while waiting) → IB landing */
+      if (e.deltaY < 0 && (isAtCampusRevealEntry() || isRevealWaiting())) {
         e.preventDefault();
+        cancelCampusRevealWait();
         animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
         return;
       }
@@ -314,8 +327,8 @@ window.addEventListener(
     const pastHero = y >= endOfHero() - 2;
     const atIbLanding = isAtIbLanding();
 
-    // Snap points: hero, IB, and campus-reveal entry (scroll 3 plays via crPlayFullReveal, not native scrub)
-    const atCrEntry = isAtCampusRevealEntry();
+    // Snap points: hero, IB, campus entry (logo auto-plays after a short wait)
+    const atCrEntry = isAtCampusRevealEntry() || isRevealWaiting();
     const isAtSnapPoint =
       (!pastHero || atIbLanding || atCrEntry) && !isInCampusRevealPinnedRange();
 
@@ -370,16 +383,17 @@ window.addEventListener(
       animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
       handled = true;
     }
-    /* Finger moves up → full campus reveal animation (scroll 3) */
-    else if (deltaY > 0 && isAtCampusRevealEntry()) {
-      if (playCampusRevealAnimation()) handled = true;
-    }
     /* Finger moves down → rewind reveal to entry */
     else if (deltaY < 0 && isCampusRevealComplete()) {
+      cancelCampusRevealWait();
       if (rewindCampusRevealAnimation()) handled = true;
     }
-    /* Finger moves down → IB landing (at reveal entry only) */
-    else if (deltaY < 0 && isAtCampusRevealEntry()) {
+    /* Finger moves down → IB landing (at reveal entry or while waiting) */
+    else if (
+      deltaY < 0 &&
+      (isAtCampusRevealEntry() || isRevealWaiting())
+    ) {
+      cancelCampusRevealWait();
       animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
       handled = true;
     }

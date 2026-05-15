@@ -246,19 +246,41 @@ if (ibInteractive) {
 
     window.crScrollLocked = false;
     let revealAutoTween = null;
-    let revealSnapFired = false; // Single-shot gate — prevents re-firing while snap is in progress
+    let revealSnapFired = false;
+    let revealDelayTimer = null;
+
+    const REVEAL_AUTO_DELAY = 0.2;
+    const REVEAL_ANIM_DURATION = 3;
+
+    function cancelScheduledReveal() {
+      if (revealDelayTimer) {
+        clearTimeout(revealDelayTimer);
+        revealDelayTimer = null;
+      }
+    }
+
+    function isRevealAutoPending() {
+      return revealDelayTimer !== null;
+    }
 
     function releaseRevealScrollLock(skipTweenKill) {
       window.crScrollLocked = false;
       if (!skipTweenKill && revealAutoTween) {
-        const tween = revealAutoTween;
+        const active = revealAutoTween;
         revealAutoTween = null;
-        tween.kill();
+        active.kill();
       }
     }
 
-    function startRevealAutoScroll(targetY) {
+    function finishRevealScrollMotion() {
+      revealAutoTween = null;
+      revealSnapFired = false;
+      releaseRevealScrollLock(true);
+    }
+
+    function startRevealAutoScroll(targetY, duration) {
       if (revealSnapFired) return false;
+      cancelScheduledReveal();
       revealSnapFired = true;
       window.crScrollLocked = true;
 
@@ -266,18 +288,10 @@ if (ibInteractive) {
 
       revealAutoTween = gsap.to(window, {
         scrollTo: { y: targetY, autoKill: true },
-        duration: 2.5,
+        duration: duration || REVEAL_ANIM_DURATION,
         ease: 'power2.inOut',
-        onComplete: function () {
-          revealAutoTween = null;
-          revealSnapFired = false;
-          releaseRevealScrollLock(true);
-        },
-        onInterrupt: function () {
-          revealAutoTween = null;
-          revealSnapFired = false;
-          releaseRevealScrollLock(true);
-        },
+        onComplete: finishRevealScrollMotion,
+        onInterrupt: finishRevealScrollMotion,
       });
       return true;
     }
@@ -285,13 +299,35 @@ if (ibInteractive) {
     window.crPlayFullReveal = function () {
       const st = ScrollTrigger.getById('campus-reveal-pin');
       if (!st || revealSnapFired || window.crScrollLocked) return false;
-      return startRevealAutoScroll(st.end);
+      return startRevealAutoScroll(st.end, REVEAL_ANIM_DURATION);
+    };
+
+    window.crScheduleAutoReveal = function () {
+      cancelScheduledReveal();
+      const st = ScrollTrigger.getById('campus-reveal-pin');
+      if (!st || revealSnapFired || window.crScrollLocked) return;
+
+      window.crRevealWaiting = true;
+      revealDelayTimer = window.setTimeout(function () {
+        revealDelayTimer = null;
+        window.crRevealWaiting = false;
+        const y = window.scrollY;
+        if (y < st.start - 24 || y > st.start + 36) return;
+        if (st.progress > 0.04) return;
+        window.crPlayFullReveal();
+      }, REVEAL_AUTO_DELAY * 1000);
+    };
+
+    window.crCancelScheduledReveal = function () {
+      window.crRevealWaiting = false;
+      cancelScheduledReveal();
     };
 
     window.crResetRevealToStart = function () {
       const st = ScrollTrigger.getById('campus-reveal-pin');
       if (!st || revealSnapFired || window.crScrollLocked) return false;
-      return startRevealAutoScroll(st.start);
+      cancelScheduledReveal();
+      return startRevealAutoScroll(st.start, REVEAL_ANIM_DURATION);
     };
 
     ScrollTrigger.config({
@@ -347,12 +383,16 @@ if (ibInteractive) {
           if (self.progress < 0.46) enableMask();
           else disableMask();
 
-          // Fallback: if user lands mid-reveal, finish in one motion (entry uses crPlayFullReveal)
-          if (!window.crScrollLocked && !revealSnapFired) {
+          // Fallback: mid-reveal only (entry waits for crScheduleAutoReveal)
+          if (
+            !window.crScrollLocked &&
+            !revealSnapFired &&
+            !isRevealAutoPending()
+          ) {
             if (self.direction === 1 && self.progress >= 0.08 && self.progress < 0.92) {
-              startRevealAutoScroll(self.end);
+              startRevealAutoScroll(self.end, REVEAL_ANIM_DURATION);
             } else if (self.direction === -1 && self.progress <= 0.92 && self.progress > 0.08) {
-              startRevealAutoScroll(self.start);
+              startRevealAutoScroll(self.start, REVEAL_ANIM_DURATION);
             }
           }
 
@@ -395,7 +435,8 @@ if (ibInteractive) {
           }
         },
         onLeaveBack() {
-          revealSnapFired = false; // Reset for next entry
+          revealSnapFired = false;
+          cancelScheduledReveal();
           releaseRevealScrollLock(false);
           setPhase('masked');
           setCarouselInteractive(false);
