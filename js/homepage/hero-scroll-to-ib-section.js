@@ -133,6 +133,8 @@
     }
   }
 
+  // ─── Scroll listener (clears lock when target reached) ───────────────────────
+
   window.addEventListener(
     "scroll",
     function () {
@@ -163,6 +165,8 @@
     },
     { passive: true },
   );
+
+  // ─── Wheel (desktop) ─────────────────────────────────────────────────────────
 
   window.addEventListener(
     "wheel",
@@ -221,5 +225,70 @@
       }
     },
     { passive: false },
+  );
+
+  // ─── Touch (real mobile devices) ─────────────────────────────────────────────
+
+  const SWIPE_THRESHOLD = 30; // minimum px swipe distance to trigger snap
+
+  let touchStartY = 0;
+  let touchStartX = 0;
+
+  window.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true },
+  );
+
+  window.addEventListener(
+    "touchend",
+    function (e) {
+      if (reduceMotion) return;
+      if (isCampusRevealLocked()) return;
+      if (lockScroll) return;
+
+      const deltaY = touchStartY - e.changedTouches[0].clientY;
+      const deltaX = touchStartX - e.changedTouches[0].clientX;
+
+      // Ignore horizontal swipes (e.g. carousels)
+      if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+
+      // Ignore swipes that are too short
+      if (Math.abs(deltaY) < SWIPE_THRESHOLD) return;
+
+      const y = window.scrollY;
+      const pastHero = y >= endOfHero() - 2;
+
+      /* Swipe up (finger up = scroll down) from hero → IB landing */
+      if (deltaY > 0 && !pastHero) {
+        animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-top");
+        return;
+      }
+
+      /* Swipe up from IB landing → M Logo */
+      const ibScrolled = document.querySelector(
+        ".ib-bilingual-school-leaf-scrolled",
+      );
+      if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
+        animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
+        return;
+      }
+
+      /* Swipe down (finger down = scroll up) from M Logo → IB landing */
+      if (deltaY < 0 && isAtMLogo()) {
+        animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
+        return;
+      }
+
+      /* Swipe down from IB landing → hero */
+      if (deltaY < 0 && pastHero && isAtIbLanding()) {
+        animateWindowScrollTo(0, "to-hero");
+        return;
+      }
+    },
+    { passive: true },
   );
 })();
