@@ -258,19 +258,19 @@ if (ibInteractive) {
     }
 
     function startRevealAutoScroll(targetY) {
-      if (revealSnapFired) return; // Already snapping — don't re-trigger on every scrub tick
+      if (revealSnapFired) return false;
       revealSnapFired = true;
       window.crScrollLocked = true;
 
       if (revealAutoTween) revealAutoTween.kill();
 
       revealAutoTween = gsap.to(window, {
-        scrollTo: { y: targetY, autoKill: true }, // autoKill: true so user can interrupt cleanly
+        scrollTo: { y: targetY, autoKill: true },
         duration: 2.5,
         ease: 'power2.inOut',
         onComplete: function () {
           revealAutoTween = null;
-          revealSnapFired = false; // Reset so reverse direction can snap
+          revealSnapFired = false;
           releaseRevealScrollLock(true);
         },
         onInterrupt: function () {
@@ -279,7 +279,20 @@ if (ibInteractive) {
           releaseRevealScrollLock(true);
         },
       });
+      return true;
     }
+
+    window.crPlayFullReveal = function () {
+      const st = ScrollTrigger.getById('campus-reveal-pin');
+      if (!st || revealSnapFired || window.crScrollLocked) return false;
+      return startRevealAutoScroll(st.end);
+    };
+
+    window.crResetRevealToStart = function () {
+      const st = ScrollTrigger.getById('campus-reveal-pin');
+      if (!st || revealSnapFired || window.crScrollLocked) return false;
+      return startRevealAutoScroll(st.start);
+    };
 
     ScrollTrigger.config({
       ignoreMobileResize: true,
@@ -287,9 +300,6 @@ if (ibInteractive) {
 
     const isMobile = window.innerWidth <= 768;
     const isTallTablet = !isMobile && window.innerWidth >= 800 && window.innerWidth <= 1100 && window.innerHeight >= 1100;
-    const prefersTouchScrub =
-      (typeof ScrollTrigger !== 'undefined' && ScrollTrigger.isTouch === true) ||
-      window.matchMedia('(pointer: coarse)').matches;
     const maskProxy = { size: isMobile ? 115 : (isTallTablet ? 78 : 44) };
 
     function applyMaskSize(pct) {
@@ -337,15 +347,11 @@ if (ibInteractive) {
           if (self.progress < 0.46) enableMask();
           else disableMask();
 
-          // Desktop only: auto-snap through the reveal. On touch, manual scrub is required.
-          if (
-            !prefersTouchScrub &&
-            !window.crScrollLocked &&
-            !revealSnapFired
-          ) {
-            if (self.direction === 1 && self.progress > 0.005 && self.progress < 0.9) {
+          // Fallback: if user lands mid-reveal, finish in one motion (entry uses crPlayFullReveal)
+          if (!window.crScrollLocked && !revealSnapFired) {
+            if (self.direction === 1 && self.progress >= 0.08 && self.progress < 0.92) {
               startRevealAutoScroll(self.end);
-            } else if (self.direction === -1 && self.progress < 0.995 && self.progress > 0.1) {
+            } else if (self.direction === -1 && self.progress <= 0.92 && self.progress > 0.08) {
               startRevealAutoScroll(self.start);
             }
           }
@@ -435,12 +441,10 @@ if (ibInteractive) {
       setCarouselInteractive(false);
     });
 
-    if (prefersTouchScrub) {
-      window.addEventListener('touchcancel', function () {
-        revealSnapFired = false;
-        releaseRevealScrollLock(false);
-      }, { passive: true });
-    }
+    window.addEventListener('touchcancel', function () {
+      revealSnapFired = false;
+      releaseRevealScrollLock(false);
+    }, { passive: true });
   } catch (err) {
     console.warn('Campus reveal animation failed to initialize:', err);
     if (typeof gsap !== 'undefined') {

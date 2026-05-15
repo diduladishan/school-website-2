@@ -63,13 +63,36 @@
     return y > st.start + 4 && y < st.end - 4;
   }
 
-  /** At the very start of campus reveal — safe to snap back to IB */
+  /** At the very start of campus reveal — scroll 3 begins here */
   function isAtCampusRevealEntry() {
     if (typeof window.ScrollTrigger !== "undefined") {
       const st = window.ScrollTrigger.getById("campus-reveal-pin");
       if (st && st.isActive) return st.progress <= 0.02;
     }
     return isAtMLogo();
+  }
+
+  /** Campus reveal animation finished — carousel interactive */
+  function isCampusRevealComplete() {
+    if (typeof window.ScrollTrigger !== "undefined") {
+      const st = window.ScrollTrigger.getById("campus-reveal-pin");
+      if (st && st.isActive) return st.progress >= 0.96;
+    }
+    return false;
+  }
+
+  function playCampusRevealAnimation() {
+    return (
+      typeof window.crPlayFullReveal === "function" &&
+      window.crPlayFullReveal()
+    );
+  }
+
+  function rewindCampusRevealAnimation() {
+    return (
+      typeof window.crResetRevealToStart === "function" &&
+      window.crResetRevealToStart()
+    );
   }
 
   let lockScroll = false;
@@ -218,7 +241,7 @@
         return;
       }
 
-      /* Scroll down from IB landing → M Logo */
+      /* Scroll down from IB landing → campus reveal entry (scroll 2) */
       const ibScrolled = document.querySelector(
         ".ib-bilingual-school-leaf-scrolled",
       );
@@ -228,8 +251,22 @@
         return;
       }
 
-      /* Scroll up from M Logo → IB landing */
-      if (e.deltaY < 0 && isAtMLogo()) {
+      /* Scroll down at campus reveal entry → full logo animation (scroll 3) */
+      if (e.deltaY > 0 && isAtCampusRevealEntry()) {
+        e.preventDefault();
+        playCampusRevealAnimation();
+        return;
+      }
+
+      /* Scroll up after reveal completes → rewind to entry */
+      if (e.deltaY < 0 && isCampusRevealComplete()) {
+        e.preventDefault();
+        rewindCampusRevealAnimation();
+        return;
+      }
+
+      /* Scroll up from campus reveal entry → IB landing */
+      if (e.deltaY < 0 && isAtCampusRevealEntry()) {
         e.preventDefault();
         animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
         return;
@@ -277,9 +314,10 @@ window.addEventListener(
     const pastHero = y >= endOfHero() - 2;
     const atIbLanding = isAtIbLanding();
 
-    // Do not block native scroll at campus-reveal — ScrollTrigger needs touch scroll to scrub the M mask
+    // Snap points: hero, IB, and campus-reveal entry (scroll 3 plays via crPlayFullReveal, not native scrub)
+    const atCrEntry = isAtCampusRevealEntry();
     const isAtSnapPoint =
-      (!pastHero || atIbLanding) && !isInCampusRevealPinnedRange();
+      (!pastHero || atIbLanding || atCrEntry) && !isInCampusRevealPinnedRange();
 
     if (isAtSnapPoint && !reduceMotion && !isCampusRevealLocked()) {
       e.preventDefault(); // Block native scroll from the very first touch
@@ -327,12 +365,20 @@ window.addEventListener(
       animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-top");
       handled = true;
     }
-    /* Finger moves up → M logo */
+    /* Finger moves up → campus reveal entry (scroll 2) */
     else if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
       animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
       handled = true;
     }
-    /* Finger moves down → IB landing (only at reveal entry, not mid-animation) */
+    /* Finger moves up → full campus reveal animation (scroll 3) */
+    else if (deltaY > 0 && isAtCampusRevealEntry()) {
+      if (playCampusRevealAnimation()) handled = true;
+    }
+    /* Finger moves down → rewind reveal to entry */
+    else if (deltaY < 0 && isCampusRevealComplete()) {
+      if (rewindCampusRevealAnimation()) handled = true;
+    }
+    /* Finger moves down → IB landing (at reveal entry only) */
     else if (deltaY < 0 && isAtCampusRevealEntry()) {
       animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
       handled = true;
