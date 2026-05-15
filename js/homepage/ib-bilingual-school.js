@@ -246,32 +246,10 @@ if (ibInteractive) {
 
     window.crScrollLocked = false;
     let revealAutoTween = null;
-    let revealBlockersAttached = false;
-
-    function crPreventNativeScroll(e) {
-      if (window.crScrollLocked) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }
-
-    function attachRevealScrollBlockers() {
-      if (revealBlockersAttached) return;
-      window.addEventListener('wheel', crPreventNativeScroll, { passive: false });
-      window.addEventListener('touchmove', crPreventNativeScroll, { passive: false });
-      revealBlockersAttached = true;
-    }
-
-    function detachRevealScrollBlockers() {
-      if (!revealBlockersAttached) return;
-      window.removeEventListener('wheel', crPreventNativeScroll);
-      window.removeEventListener('touchmove', crPreventNativeScroll);
-      revealBlockersAttached = false;
-    }
+    let revealSnapFired = false; // Single-shot gate — prevents re-firing while snap is in progress
 
     function releaseRevealScrollLock(skipTweenKill) {
       window.crScrollLocked = false;
-      detachRevealScrollBlockers();
       if (!skipTweenKill && revealAutoTween) {
         const tween = revealAutoTween;
         revealAutoTween = null;
@@ -280,20 +258,24 @@ if (ibInteractive) {
     }
 
     function startRevealAutoScroll(targetY) {
-      releaseRevealScrollLock(false);
+      if (revealSnapFired) return; // Already snapping — don't re-trigger on every scrub tick
+      revealSnapFired = true;
       window.crScrollLocked = true;
-      attachRevealScrollBlockers();
+
+      if (revealAutoTween) revealAutoTween.kill();
 
       revealAutoTween = gsap.to(window, {
-        scrollTo: { y: targetY, autoKill: false },
+        scrollTo: { y: targetY, autoKill: true }, // autoKill: true so user can interrupt cleanly
         duration: 2.5,
         ease: 'power2.inOut',
         onComplete: function () {
           revealAutoTween = null;
+          revealSnapFired = false; // Reset so reverse direction can snap
           releaseRevealScrollLock(true);
         },
         onInterrupt: function () {
           revealAutoTween = null;
+          revealSnapFired = false;
           releaseRevealScrollLock(true);
         },
       });
@@ -352,7 +334,8 @@ if (ibInteractive) {
           if (self.progress < 0.46) enableMask();
           else disableMask();
 
-          if (!window.crScrollLocked) {
+          // Only snap once per enter — revealSnapFired gate prevents re-triggering on every scrub tick
+          if (!window.crScrollLocked && !revealSnapFired) {
             if (self.direction === 1 && self.progress > 0.005 && self.progress < 0.9) {
               startRevealAutoScroll(self.end);
             } else if (self.direction === -1 && self.progress < 0.995 && self.progress > 0.1) {
@@ -381,6 +364,7 @@ if (ibInteractive) {
           }
         },
         onLeave() {
+          revealSnapFired = false; // Reset for next time user enters this section
           releaseRevealScrollLock(false);
           setPhase('interactive');
           setCarouselInteractive(true);
@@ -389,6 +373,7 @@ if (ibInteractive) {
           }
         },
         onEnterBack() {
+          revealSnapFired = false; // Reset so reverse snap can fire
           releaseRevealScrollLock(false);
           setCarouselInteractive(false);
           // Stop autoplay and snap back to slide 1 when scrolling back into the reveal
@@ -397,6 +382,7 @@ if (ibInteractive) {
           }
         },
         onLeaveBack() {
+          revealSnapFired = false; // Reset for next entry
           releaseRevealScrollLock(false);
           setPhase('masked');
           setCarouselInteractive(false);
