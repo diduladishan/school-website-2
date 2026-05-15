@@ -54,6 +54,24 @@
     return y >= goal - 12 && y <= goal + 24;
   }
 
+  /** True while scrubbing through the pinned campus-reveal scroll range */
+  function isInCampusRevealPinnedRange() {
+    if (typeof window.ScrollTrigger === "undefined") return false;
+    const st = window.ScrollTrigger.getById("campus-reveal-pin");
+    if (!st) return false;
+    const y = window.scrollY;
+    return y > st.start + 4 && y < st.end - 4;
+  }
+
+  /** At the very start of campus reveal — safe to snap back to IB */
+  function isAtCampusRevealEntry() {
+    if (typeof window.ScrollTrigger !== "undefined") {
+      const st = window.ScrollTrigger.getById("campus-reveal-pin");
+      if (st && st.isActive) return st.progress <= 0.02;
+    }
+    return isAtMLogo();
+  }
+
   let lockScroll = false;
   /** @type {null | "to-ib-from-top" | "to-ib-from-bottom" | "to-mlogo" | "to-hero"} */
   let lockMode = null;
@@ -258,9 +276,10 @@ window.addEventListener(
     const y = window.scrollY;
     const pastHero = y >= endOfHero() - 2;
     const atIbLanding = isAtIbLanding();
-    const atMLogo = isAtMLogo();
 
-    const isAtSnapPoint = !pastHero || atIbLanding || atMLogo;
+    // Do not block native scroll at campus-reveal — ScrollTrigger needs touch scroll to scrub the M mask
+    const isAtSnapPoint =
+      (!pastHero || atIbLanding) && !isInCampusRevealPinnedRange();
 
     if (isAtSnapPoint && !reduceMotion && !isCampusRevealLocked()) {
       e.preventDefault(); // Block native scroll from the very first touch
@@ -313,8 +332,8 @@ window.addEventListener(
       animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
       handled = true;
     }
-    /* Finger moves down → IB landing */
-    else if (deltaY < 0 && isAtMLogo()) {
+    /* Finger moves down → IB landing (only at reveal entry, not mid-animation) */
+    else if (deltaY < 0 && isAtCampusRevealEntry()) {
       animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
       handled = true;
     }

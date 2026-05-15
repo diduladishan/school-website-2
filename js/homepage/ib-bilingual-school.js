@@ -287,6 +287,9 @@ if (ibInteractive) {
 
     const isMobile = window.innerWidth <= 768;
     const isTallTablet = !isMobile && window.innerWidth >= 800 && window.innerWidth <= 1100 && window.innerHeight >= 1100;
+    const prefersTouchScrub =
+      (typeof ScrollTrigger !== 'undefined' && ScrollTrigger.isTouch === true) ||
+      window.matchMedia('(pointer: coarse)').matches;
     const maskProxy = { size: isMobile ? 115 : (isTallTablet ? 78 : 44) };
 
     function applyMaskSize(pct) {
@@ -334,8 +337,12 @@ if (ibInteractive) {
           if (self.progress < 0.46) enableMask();
           else disableMask();
 
-          // Only snap once per enter — revealSnapFired gate prevents re-triggering on every scrub tick
-          if (!window.crScrollLocked && !revealSnapFired) {
+          // Desktop only: auto-snap through the reveal. On touch, manual scrub is required.
+          if (
+            !prefersTouchScrub &&
+            !window.crScrollLocked &&
+            !revealSnapFired
+          ) {
             if (self.direction === 1 && self.progress > 0.005 && self.progress < 0.9) {
               startRevealAutoScroll(self.end);
             } else if (self.direction === -1 && self.progress < 0.995 && self.progress > 0.1) {
@@ -427,6 +434,13 @@ if (ibInteractive) {
     ScrollTrigger.addEventListener('refreshInit', function () {
       setCarouselInteractive(false);
     });
+
+    if (prefersTouchScrub) {
+      window.addEventListener('touchcancel', function () {
+        revealSnapFired = false;
+        releaseRevealScrollLock(false);
+      }, { passive: true });
+    }
   } catch (err) {
     console.warn('Campus reveal animation failed to initialize:', err);
     if (typeof gsap !== 'undefined') {

@@ -18467,10 +18467,7 @@ a.enquiry-get-in-touch__line:hover {
 
 /* ── Mobile Overrides ── */
 @media (max-width: 768px) {
-  #cr-image-wrapper {
-    -webkit-mask-size: 80%;
-    mask-size: 80%;
-  }
+  /* Mask size is driven by GSAP (ib-bilingual-school.js) — fixed % here blocked scrub animation */
 
   #campus-reveal .cr-carousel-shell {
     justify-content: center;
