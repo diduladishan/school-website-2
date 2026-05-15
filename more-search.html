@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dar Al Marefa School Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s3.eu-west-1.amazonaws.com/www.daralmarefa.ae/favicon.ico"
+    />
+  </head>
+
+  <body>
+    <div class="more-search-english">
+      <div class="header-english">
+        <!-- Header and Hero Section -->
+        <section>
+          <!-- Navbar -->
+          <nav class="hero__nav inner-page-nav">
+            <!-- Logos -->
+            <div class="hero__logos">
+              <a href="index.html">
+                <img
+                  class="hero__logo"
+                  src="./assets/images/ABOUT-US/Marefa-logo-HQ.png"
+                  alt="Dar Al Marefa"
+                />
+              </a>
+              <div class="hero__logo-divider"></div>
+              <img
+                class="hero__logo-colegio-del-mundo"
+                src="./assets/images/ABOUT-US/colegio-del-mundo-HQ.png"
+                alt="Colegio del Mundo IB"
+              />
+            </div>
+
+            <div class="hero__nav-spacer"></div>
+
+            <div class="nav-links-search-gap">
+              <!-- Nav links (desktop) -->
+              <ul class="hero__nav-links">
+                <li>
+                  <a href="#" style="color: white">ENQUIRE</a>
+                  <img
+                    class="nav-hover-icon"
+                    src="./assets/images/hero-section/nav-hover-01.png"
+                    alt="leaf-hover"
+                  />
+                </li>
+                <li>
+                  <a href="#" style="color: white">CONTACT</a>
+                  <img
+                    class="nav-hover-icon"
+                    src="./assets/images/hero-section/nav-hover-02.png"
+                    alt="leaf-hover"
+                  />
+                </li>
+              </ul>
+
+              <!-- Search -->
+              <div class="hero-divider-n-text">
+                <div class="hero__search-wrap">
+                  <img
+                    src="./assets/images/ABOUT-US/search-icon-HQ.png"
+                    alt="Search Icon"
+                    class="hero-search-icon"
+                  />
+                </div>
+
+                <!-- Divider + Arabic text -->
+                <div class="hero__nav-divider"></div>
+                <span class="hero__arabic" style="color: white">العربية</span>
+              </div>
+            </div>
+
+            <div class="home-page-main-btn-container">
+              <div class="home-page-main-btn-circle"></div>
+              <img
+                class="home-page-main-btn-img"
+                src="./assets/images/COMMUNITY-OVERVIEW/button-black-border-with-white-lines.png"
+                alt="Menu button"
+              />
+            </div>
+          </nav>
+        </section>
+      </div>
+
+      <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                             HERO SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+      <section class="hero">
+        <!-- Background video -->
+        <video
+          class="hero__video"
+          id="heroVideo"
+          src="./assets/videos/hero-section/hero-section-video.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <!-- Figma gradient overlay -->
+        <img
+          class="hero__gradient"
+          src="./assets/images/hero-section/homepage-gradient-updated.png"
+          alt=""
+          aria-hidden="true"
+        />
+
+        <!-- Right-side video controls -->
+        <div class="hero__video-controls">
+          <button
+            class="hero__ctrl-btn"
+            id="heroVolumeBtn"
+            aria-label="Toggle mute"
+          >
+            <img
+              src="./assets/images/hero-section/volume-control.png"
+              alt="Volume"
+              id="heroVolumeIcon"
+              class="volume-icon volume-icon--muted"
+            />
+            <img
+              src="./assets/images/hero-section/volume-control-stop.png"
+              alt="Volume Off"
+              id="heroVolumeIconStop"
+              class="volume-icon volume-icon--unmuted"
+            />
+          </button>
+          <button
+            class="hero__ctrl-btn"
+            id="heroPlayBtn"
+            aria-label="Play / Pause"
+          >
+            <img
+              src="./assets/images/hero-section/play-button-hq.png"
+              alt="Play"
+              id="heroPlayIcon"
+            />
+          </button>
+        </div>
+
+        <!-- Bottom tagline + CTA -->
+        <div class="hero__content">
+          <div>
+            <p class="hero__tagline-sub">Enhancing Life By</p>
+            <h1 class="hero__tagline-main">Nurturing Minds</h1>
+          </div>
+
+          <!-- Button Animation -->
+          <a href="#" class="cta-button-wrapper hero-cta-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="80"
+              viewBox="0 0 200 80"
+              fill="none"
+            >
+              <path
+                class="button-path-bg"
+                d="M49.1556 16.0378C35.5696 19.3594 12.4824 26.5882 5.06401 39.2551C0.285518 47.4124 2.28556 55.9385 10.5072 60.6694C18.966 65.5421 33.7178 65.77 43.4448 66.1332C74.0211 67.2683 105.671 65.0179 135.774 59.6362C148.211 57.4119 174.55 52.9632 180.398 40.3249C186.245 27.6866 165.067 22.925 156.926 21.1559C121.786 13.5011 84.0925 7.50403 49.1556 16.0378Z"
+                fill="#BB133E"
+                transform="translate(97.5 36.5) scale(1.06) translate(-97.5 -36.5) translate(6 0)"
+              />
+              <path
+                class="cta-outline"
+                d="M68.5,27.8c54.7-12.7,111.7-15.3,167.3-7.5,24.1,3.4,48.6,5.8,72.2,11.8s38,9.3,53.3,20.6c4.1,3,7.9,6.6,9.9,11.2,4.1,9.4-.4,20.7-8,27.6-12.1,11-29.2,14.4-44.8,17.2-58.9,10.5-119.9,10.9-179.5,8.5-34.5-1.3-69.4-3.2-102.1-15.3-16.8-6.2-34.4-16.6-29-37.6,4.3-16.4,19.8-29.9,34.2-37.7,23.5-12.7,50.7-16.8,77-19,28.6-2.4,57.8-2.4,86.4-.5,46.5,2.9,92.6,11.1,137.2,24.4"
+                transform="matrix(0.514 0 0 0.514 9.8 -1.2)"
+              />
+            </svg>
+
+            <div class="cta-button-text">ENROL NOW</div>
+          </a>
+        </div>
+
+        <div class="top-artwork-design js-top-artwork">
+          <img
+            src="./assets/images/ib-bilingual-school/artwork-top.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
+      <!-- Search Popup Overlay -->
+      <div class="search-modal" id="searchModal">
+        <button
+          class="search-modal__close"
+          id="searchCloseBtn"
+          aria-label="Close"
+        >
+          <img
+            src="./assets/images/more-search/search-pop-up-close.png"
+            alt="Close"
+          />
+        </button>
+        <h3 class="search-modal__title">Search</h3>
+        <div class="search-modal__row">
+          <input
+            class="search-modal__input"
+            type="text"
+            placeholder="Search for keyword..."
+            id="searchInput"
+          />
+
+          <div class="more-search-animation">
+            <div class="header-english">
+              <div class="home-page-main-btn-container">
+                <div class="home-page-main-btn-circle">
+                  <div class="search-more-si">
+                    <img src="./assets/images/more-search/search-icon.png" />
+                  </div>
+                </div>
+                <img
+                  class="home-page-main-btn-img"
+                  src="./assets/images/more-search/button-black-border-with-white-lines.png"
+                  alt="Menu button"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attached JavaScript Files -->
+    <script src="./js/vendor/jquery_v3.7.1.min.js"></script>
+    <script src="./js/vendor/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

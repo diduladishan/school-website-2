@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Dar Al Marefa School Website</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/about-us.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/homepage.css">
+  <link rel="stylesheet" href="css/admission.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<section class="admission-hero">
+    <div class="admission-hero__tree-bg" aria-hidden="true"></div>
+
+
+  <div class="about-us-main-texts custom_hero_main_section">
+
+    <h2 class="about-us-main-overview">Overview</h2>
+    <p class="about-us-main-about-us">About Us</p>
+
+     <div class="colorful-leaf-divider-container custom_hero_leaf_divider">
+      <div class="colorful-leaf-divider">
+        <img src="./assets/images/colorful-leaves-divider/colorful-leaves.png" alt="Colorful Leaves" class="colorful_leaves colorful_leaves_abt desktop_leaves">
+        <img src="./assets/images/colorful-leaves-divider/mobile_banner_leaves.png" alt="Colorful Leaves" class="colorful_leaves mobile_leaves">
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+  <!-- Horizontally scrollable pill navigation -->
+    <div class="admission-pill-nav-wrap">
+      <nav class="admission-pill-nav" role="tablist" aria-label="Admission sections">
+        <a href="#" class="admission-pill-nav__btn">Principal s Welcome</a>
+        <a href="#" class="admission-pill-nav__btn">About Dar Al Marefa</a>
+        <a href="#" class="admission-pill-nav__btn">Our Team</a>
+        <a href="#" class="admission-pill-nav__btn">Student Stories</a>
+        <a href="#" class="admission-pill-nav__btn">News & Events</a>
+      </nav>
+    </div>
+</section>
+
+    <section class="welcome_section page_welcome_section">
+      <div class="our-curriculum-heading">
+        <h3 class="typography-h3">Welcome to <strong>Dar Al Marefa</strong></h3>
+      </div>
+
+      <div class="our-curriculum-sub-container">
+        <p>It starts with an idea. The idea of a community committed to learning. A community built around the shared pursuit of knowledge. A community built around respect: for ourselves, for each other, and for the world around us.</p>
+      </div>
+    </section>
+
+
+    <section class="our-school-glance-main-container abt_welcome_video_section">
+      <div class="custom_container">
+        <div class="our-school-glance abt_welcome_video">
+          <div class="our-school-glance__video-wrapper" id="osgWrapper">
+            <!-- Replace src with your actual video file -->
+            <video class="our-school-glance__video" id="osgVideo" src="./assets/videos/hero-section/hero-section-video.mp4" preload="metadata" playsinline="" poster="assets/images/ABOUT-US/abt_welcome_video.png"></video>
+            <!-- Gradient overlay -->
+            <div class="our-school-glance__overlay"></div>
+            <!-- Heading text -->
+          
+            <!-- Play button  –  uses play-button.svg you'll upload -->
+            <button class="our-school-glance__play-btn center_play_btn" id="osgPlayBtn" aria-label="Play video">
+              <img src="./assets/images/hero-section/play-button.svg" alt="Play">
+            </button>
+            <!-- Invisible pause area (full card click while playing) -->
+            <div class="our-school-glance__pause-area" id="osgPauseArea"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <section class="Principle-message-main-container home_away_section abt_home_away_section">
+    <div>
+      <img src="assets/images/principle-message/principle-section-artwork.png" alt="artwork for desktop" class="principle-section-artwork-desktop">
+    </div>
+    <div class="Principle-message">
+      <div class="Principle-message__container">
+        <!-- Left Image Area -->
+        <div class="Principle-message__image-wrapper">
+          <div class="Principle-message__image-shape">
+            <div class="image-card">
+              <svg viewBox="0 0 433 408" class="shape-svg">
+
+                <!-- CLIP PATH -->
+                <defs>
+                  <clipPath id="imgClip4">
+                    <path d="M329.627 397.577C322.474 401.619 314.67 403.45 306.555 403.683C290.922 404.101 275.29 404.311 259.665 404.582C255.134 404.652 250.619 404.489 246.096 404.621C214.265 405.591 182.425 405.692 150.61 406.569C149.733 406.592 148.848 406.553 147.949 406.53C146.637 406.856 145.303 406.553 143.976 406.638C138.445 406.693 132.898 406.77 127.366 406.825C123.813 407.127 120.268 407.127 116.715 407.181C114.488 407.399 112.261 407.461 110.035 407.251C108.134 407.29 106.241 407.282 104.356 407.003C102.618 406.879 100.888 406.856 99.1968 406.413C95.7755 406.095 92.4783 405.234 89.2742 404.063C83.7892 402.379 78.8396 399.734 74.3632 396.173C72.2297 394.481 70.3057 392.604 68.4205 390.657C66.5896 388.748 65.325 386.498 64.2389 384.14C60.3831 377.375 56.5351 370.61 52.7259 363.822C50.22 359.361 47.753 354.853 45.2704 350.361C41.5232 343.767 37.7605 337.165 34.0444 330.57C30.9955 325.148 28.0086 319.725 24.9908 314.294C24.4399 314.038 24.471 313.479 24.3158 313.014C21.6625 308.406 19.017 303.79 16.387 299.15C15.3475 297.335 14.3699 295.488 13.3536 293.642C9.7694 287.366 5.9757 281.198 2.84144 274.681C-0.603146 267.544 -0.742792 260.104 1.49153 252.524C4.71889 241.57 7.88419 230.592 11.065 219.63C11.8796 216.837 12.6942 214.036 13.5166 211.267C14.6182 206.798 15.9216 202.391 17.3335 198.016C17.7525 196.332 18.0085 194.618 18.8774 193.097C18.7222 192.632 19.1101 192.298 19.2032 191.91C20.7316 186.604 22.2522 181.313 23.7882 176.006C25.976 168.349 28.1483 160.676 30.3361 153.019C30.3981 152.786 30.5378 152.554 30.6542 152.305C30.7085 152.088 30.755 151.871 30.8326 151.646C30.8714 151.188 30.8947 150.723 31.2127 150.343C31.8954 147.961 32.5704 145.571 33.2686 143.197C33.61 142.018 33.9591 140.87 34.3004 139.691C35.309 136.223 36.3253 132.778 37.3339 129.303C37.1166 128.822 37.5123 128.612 37.7373 128.325C37.683 128.263 37.6985 128.201 37.7838 128.154C37.6287 127.867 37.7295 127.689 38.0243 127.565C38.0942 127.286 38.1717 126.983 38.2726 126.704C38.8932 123.492 39.9095 120.381 40.794 117.231C41.0577 116.277 41.4146 115.33 41.7017 114.376C42.0353 113.321 42.3533 112.25 42.6869 111.195C43.3774 108.72 44.0601 106.261 44.7971 103.786C46.3022 98.5884 47.8616 93.4215 49.3511 88.2158L55.6972 66.8578C55.8058 66.1984 55.9765 65.5545 56.2481 64.9416C56.6049 63.8167 56.9152 62.684 57.2644 61.5513C57.3652 61.0858 57.5204 60.3333 57.6212 59.8601C57.7686 59.0222 58.079 58.2309 58.4358 57.455C59.9874 52.3347 61.3839 47.1911 63.6493 42.319C65.8603 37.5633 68.8549 33.855 74.4873 33.2188C74.9605 33.0171 75.4493 32.9318 75.9458 33.0481C75.9846 33.0249 76.0311 32.955 76.0777 32.9628C76.9466 32.9162 77.9707 32.5361 78.7232 32.7611L85.3253 33.1257H85.496C85.7986 33.1723 86.1399 33.3041 86.427 33.3585C87.7846 33.4438 89.1268 33.4438 90.4146 33.8395C91.0275 33.9403 91.6792 33.5834 92.2533 34.0334C93.2308 33.9326 94.1773 34.142 95.1238 34.4213C96.4194 34.592 97.746 34.7627 99.0571 34.9411C104.651 35.5307 108.452 36.0583 112.261 36.6944C118.607 37.509 122.843 38.1452 127.49 38.7348C131.742 39.2779 135.986 39.8364 140.229 40.395C148.825 41.5665 154.124 42.2802 159.438 43.0095C177.972 45.5309 196.514 48.0833 215.064 50.6202C235.855 53.3277 254.762 55.8569 273.684 58.4015C281.364 59.4411 288.424 62.0478 294.468 66.9742C310.139 89.0925 320.48 107.479 332.785 129.613C346.377 153.384 362.459 182.236 374.166 202.973C387.138 226.139 401.886 258.288 394.772 287.839C381.932 311.501 362.281 347.095 340.76 386.584C338.2 391.479 334.305 394.986 329.604 397.623Z"/>
+                  </clipPath>
+                </defs>
+
+                <!-- IMAGE -->
+                <image 
+                  href="../assets/images/ABOUT-US/about-kids.png"
+                  width="433"
+                  height="408"
+                  preserveAspectRatio="xMidYMid slice"
+                  clip-path="url(#imgClip4)"
+                />
+                
+                <!-- RED -->
+                <path d="M401.722 338.942C402.545 338.799 403.278 337.915 405.289 334.69C413.609 321.304 421.258 303.745 425.707 287.805C427.305 282.12 427.537 281.233 428.404 277.332C430.938 266.065 432.373 253.498 432.824 238.507C433.102 229.352 432.755 223.259 431.824 221.442C431.38 220.581 430.455 220.06 429.715 220.239C429.175 220.384 429.017 220.514 428.637 221.21C427.84 222.619 427.436 224.963 426.222 234.948C422.99 261.557 421.846 269.051 418.883 282.884C416.419 294.331 412.199 308.176 408.029 318.377C406.899 321.129 405.927 323.378 401.862 332.405C400.485 335.508 400.11 336.754 400.287 337.777C400.457 338.685 400.934 339.065 401.722 338.942Z" fill="#BB133E"/>
+
+                <!-- BEIGE -->
+                <path d="M105.558 0.165945C104.949 -0.185739 103.998 -0.00888096 100.958 0.992777C88.3609 5.16401 73.9468 12.3965 62.4761 20.307C58.3777 23.1215 57.7491 23.5708 55.0857 25.6263C47.3727 31.547 39.6692 38.9006 31.2954 48.353C26.1792 54.1239 23.1192 58.2517 22.7416 59.9288C22.5649 60.7251 22.8824 61.5606 23.4575 61.8434C23.8849 62.0409 24.0567 62.0417 24.6778 61.7973C25.9528 61.3152 27.4774 60.0173 33.646 54.214C50.0822 38.7474 54.8624 34.5175 64.2367 27.1687C72.0019 21.0937 82.1955 14.4147 90.3919 10.0653C92.606 8.8947 94.4475 7.96438 101.943 4.31768C104.506 3.0535 105.421 2.44951 105.858 1.69271C106.238 1.01364 106.134 0.510873 105.558 0.165945Z" fill="#D29163"/>
+
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Right Content -->
+        <div class="Principle-message__content">
+          <h3 class="typography-h3">A home away from home,</h3> 
+          <h3 class="typography-h3 red_hd"><strong>a house of knowledge.</strong></h3>
+          <p>More than an IB Curriculum school, Dar Al Marefa is a community that empowers every child and enriches their development, giving them the skills they need to become lifelong learners. We encourage children to become active members of their social communities - members who are knowledgeable, confident and kind.</p>
+          <p>Dar Al Marefa is an inspiring educational initiative by Al Ghurair and is a top ranked learning institution, and the only bilingual International Baccalaureate Curriculum school in Dubai. In partnership with parents, friends, and the local community, we aim to make a significant contribution to the UAE’s next generation, instilling in them Emirati and Islamic values.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   <script src="./js/our-school-at-glance.js"></script>
+</body>
+
+</html>

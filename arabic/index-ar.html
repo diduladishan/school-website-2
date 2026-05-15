@@ -1,0 +1,1641 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Dar Al Marefa School Website</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles-ar.css" />
+    <link rel="stylesheet" href="../css/intlTelInput.css">
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="homepage-arabic">
+      <div class="arabic_page">
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                             HERO SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+        <section class="hero">
+          <!-- Background video -->
+          <video
+            class="hero__video"
+            id="heroVideo"
+            src="../assets/videos/hero-section/hero-section-video.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+
+          <!-- Figma gradient overlay -->
+          <img
+            class="hero__gradient"
+            src="../assets/images/hero-section/homepage-gradient.png"
+            alt=""
+            aria-hidden="true"
+          />
+
+          <!-- Right-side video controls -->
+          <div class="hero__video-controls">
+            <button
+              class="hero__ctrl-btn"
+              id="heroVolumeBtn"
+              aria-label="Toggle mute"
+            >
+              <img
+                src="../assets/images/hero-section/volume-control.png"
+                alt="Volume"
+                id="heroVolumeIcon"
+                class="volume-icon volume-icon--muted"
+              />
+              <img
+                src="../assets/images/hero-section/volume-control-stop.png"
+                alt="Volume Off"
+                id="heroVolumeIconStop"
+                class="volume-icon volume-icon--unmuted"
+              />
+            </button>
+            <button
+              class="hero__ctrl-btn"
+              id="heroPlayBtn"
+              aria-label="Play / Pause"
+            >
+              <img
+                src="../assets/images/hero-section/play-button-hq.png"
+                alt="Play"
+                id="heroPlayIcon"
+              />
+            </button>
+          </div>
+
+          <!-- Bottom tagline + CTA -->
+          <div class="hero__content">
+            <p class="hero__tagline-sub">تعزيز الحياة بواسطة</p>
+            <h1 class="hero__tagline-main">تربية العقول</h1>
+            <div class="button-wrapper" id="enrollBtn">
+              <img
+                src="../assets/images/hero-section/hero-button.png"
+                alt="Enroll Button"
+              />
+              <span class="button-text">سجّل الآن</span>
+            </div>
+          </div>
+
+          <div class="top-artwork-design js-top-artwork">
+            <img
+              src="../assets/images/ib-bilingual-school/artwork-top.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                        THE ONLY IB BILINGUAL SCHOOL IN AL KHAWANEEJ SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+        <section class="ib-bilingual-school-section" id="ib-bilingual-school">
+          <!-- Black palm artwork at the top -->
+          <div class="ib-bilingual-school-artwork">
+            <div class="ib-bilingual-school-artwork-base">
+              <img
+                src="../assets/images/ib-bilingual-school/artwork.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <!-- Text -->
+              <div class="ib-bilingual-school-text-wrap" id="ibText">
+                <span class="ib-bilingual-school-line" dir="rtl">
+                  <span class="ib-bilingual-school-plain">المدرسة </span
+                  ><span class="ib-bilingual-school-bold">الثنائية اللغة </span
+                  ><span class="ib-bilingual-school-plain"
+                    >الوحيدة لبرنامج</span
+                  >
+                </span>
+                <span class="ib-bilingual-school-line" dir="rtl">
+                  <span class="ib-bilingual-school-bold"
+                    >البكالوريا الدولية (IB) </span
+                  ><span class="ib-bilingual-school-plain">في الخوانيج</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blue leaf (animated) -->
+          <div class="ib-bilingual-school-blue-leaf" id="ibBlueLeaf">
+            <img
+              src="../assets/images/ib-bilingual-school/blue-leaf.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+        </section>
+
+    <!-- ═══════════════════════════════════════════════════
+                CAMPUS REVEAL — SCROLL ANIMATION
+═══════════════════════════════════════════════════════ -->
+    <section id="campus-reveal" data-cr-phase="masked">
+      <!-- LAYER 0: Dark photo bg — starts hidden, fades in as M grows -->
+      <div id="cr-section-photo-bg"></div>
+
+      <!-- LAYER 1: Campus photo, masked through M arch (Phases 1-2) -->
+      <div id="cr-image-wrapper">
+        <img
+          id="cr-image"
+          src="../assets/images/homepage-carousel/carousel-item.jpg"
+          alt="State-of-art Campus"
+          draggable="false"
+        />
+      </div>
+
+      <!-- LAYER 2: Full-bleed text overlay (Phase 2-3) -->
+      <div id="cr-fullbleed-ui">
+        <div class="cr-caption">State-of-art <strong>Campus</strong></div>
+        <button class="cr-card-arrow" aria-label="Next">
+          <img
+            src="../assets/images/homepage-carousel/carousel-next-updated.png"
+            alt="Next Icon"
+            draggable="false"
+          />
+        </button>
+      </div>
+
+      <!-- LAYER 3: Carousel dark background (Phase 3-4) -->
+      <div id="cr-carousel-bg"></div>
+
+      <!-- LAYER 4: Second carousel card peeking in from right (Phase 3-4) -->
+      <div id="cr-second-card">
+        <!-- FIX Bug 5: use a different image so the peeking card looks distinct -->
+        <img
+          src="../assets/images/homepage-carousel/carousel-item.jpg"
+          alt="Carousel Item 2"
+          draggable="false"
+        />
+        <div class="cr-caption">State-of-art <strong>Campus</strong></div>
+      </div>
+
+      <!-- Canonical carousel section (single source of truth) -->
+      <section class="what-make-us-unique__section cr-carousel-shell">
+      <h3 class="what-make-us-unique__heading">
+        ما الذي يجعلنا <strong>فريدون؟</strong>
+      </h3>
+      <!-- Track viewport -->
+      <div class="what-make-us-unique__viewport" id="wmuViewport">
+        <!-- Track -->
+        <div class="what-make-us-unique__track" id="wmuTrack">
+          <div class="what-make-us-unique__card is-active">
+            <img
+              src="../assets/images/homepage-carousel/carousel-item.jpg"
+              alt="Carousel Item 1"
+              draggable="false"
+            />
+
+            <div class="what-make-us-unique__caption">
+              حديثة <strong>حرم الجامعة</strong>
+            </div>
+
+            <div class="what-make-us-unique__card-arrow" aria-label="Next">
+              <div class="what-makes-us-unique-btn-animation-btn">
+                <div class="what-makes-us-unique-btn-animation-circle"></div>
+                <div class="what-makes-us-unique-btn-animation-arrow">
+                  <!-- Replace this SVG with your imported what-makes-us-unique-arrow.png -->
+                   <a 
+                    href="https://www.google.com" 
+                    target="_blank">  
+                    
+                    <img
+                    src="../assets/images/homepage-carousel/carousel-item-next.png"
+                    alt="Carousel Item 1"
+                    draggable="false"
+                  />
+                  </a>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="what-make-us-unique__card">
+            <img
+              src="../assets/images/homepage-carousel/carousel-item.jpg"
+              alt="Carousel Item 1"
+              draggable="false"
+            />
+
+            <div class="what-make-us-unique__caption">
+              حديثة <strong>حرم الجامعة</strong>
+            </div>
+
+            <div class="what-make-us-unique__card-arrow" aria-label="Next">
+              <div class="what-makes-us-unique-btn-animation-btn">
+                <div class="what-makes-us-unique-btn-animation-circle"></div>
+                <div class="what-makes-us-unique-btn-animation-arrow">
+                  <!-- Replace this SVG with your imported what-makes-us-unique-arrow.png -->
+                    <a 
+                    href="https://www.google.com" 
+                    target="_blank">  
+
+                    <img
+                    src="../assets/images/homepage-carousel/carousel-item-next.png"
+                    alt="Carousel Item 1"
+                    draggable="false"
+                  />
+                  </a>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="what-make-us-unique__card">
+            <img
+              src="../assets/images/homepage-carousel/carousel-item.jpg"
+              alt="Carousel Item 1"
+              draggable="false"
+            />
+
+            <div class="what-make-us-unique__caption">
+             حديثة <strong>حرم الجامعة</strong>
+            </div>
+
+            <div class="what-make-us-unique__card-arrow" aria-label="Next">
+              <div class="what-makes-us-unique-btn-animation-btn">
+                <div class="what-makes-us-unique-btn-animation-circle"></div>
+                <div class="what-makes-us-unique-btn-animation-arrow">
+                  <!-- Replace this SVG with your imported what-makes-us-unique-arrow.png -->
+                   <a 
+                    href="https://www.google.com" 
+                    target="_blank"> 
+
+                    <img
+                    src="../assets/images/homepage-carousel/carousel-item-next.png"
+                    alt="Carousel Item 1"
+                    draggable="false"
+                  />
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="what-make-us-unique__card">
+            <img
+              src="../assets/images/homepage-carousel/carousel-item.jpg"
+              alt="Carousel Item 1"
+              draggable="false"
+            />
+
+            <div class="what-make-us-unique__caption">
+              حديثة <strong>حرم الجامعة</strong>
+            </div>
+
+            <div class="what-make-us-unique__card-arrow" aria-label="Next">
+              <div class="what-makes-us-unique-btn-animation-btn">
+                <div class="what-makes-us-unique-btn-animation-circle"></div>
+                <div class="what-makes-us-unique-btn-animation-arrow">
+                  <!-- Replace this SVG with your imported what-makes-us-unique-arrow.png -->
+
+                  <a href="https://www.google.com" 
+                    target="_blank">
+                    
+                    <img
+                    src="../assets/images/homepage-carousel/carousel-item-next.png"
+                    alt="Carousel Item 1"
+                    draggable="false"
+                  />
+
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FIX Bug 6: 5th slide added to match the 5-dot mock controls -->
+          <div class="what-make-us-unique__card">
+            <img
+              src="../assets/images/homepage-carousel/carousel-item.jpg"
+              alt="Carousel Item 5"
+              draggable="false"
+            />
+
+            <div class="what-make-us-unique__caption">
+              حديثة <strong>حرم الجامعة</strong>
+            </div>
+
+            <div class="what-make-us-unique__card-arrow" aria-label="Next">
+              <div class="what-makes-us-unique-btn-animation-btn">
+                <div class="what-makes-us-unique-btn-animation-circle"></div>
+                <div class="what-makes-us-unique-btn-animation-arrow">
+                  <!-- Replace this SVG with your imported what-makes-us-unique-arrow.png -->
+
+                  <a href="https://www.google.com" 
+                    target="_blank">  
+                    
+                    <img
+                    src="../assets/images/homepage-carousel/carousel-item-next.png"
+                    alt="Carousel Item 1"
+                    draggable="false"
+                  />
+
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom controls: prev image arrow · dots · next image arrow -->
+      <div class="what-make-us-unique__controls">
+        <button
+          class="what-make-us-unique__arrow"
+          id="wmuPrev"
+          aria-label="Previous"
+        >
+          <img
+            src="../assets/images/homepage-carousel/previous.png"
+            alt="Previous"
+          />
+        </button>
+
+        <div class="what-make-us-unique__dots" id="wmuDots"></div>
+
+        <button
+          class="what-make-us-unique__arrow"
+          id="wmuNext"
+          aria-label="Next"
+        >
+          <img src="../assets/images/homepage-carousel/next.png" alt="Next" />
+        </button>
+      </div>
+      </section>
+    </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                           PRINCIPLE'S MESSAGE SECTION
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+        <section class="Principle-message-main-container">
+          <div>
+            <img
+              src="../assets/images/principle-message/principle-section-artwork-ar.png"
+              alt="artwork for desktop"
+              class="principle-section-artwork-desktop"
+            />
+          </div>
+
+          <img
+            src="../assets/images/principle-message/principle-section-artwork-mobile.png"
+            alt="artwork for mobile"
+            class="principle-section-artwork-mobile"
+          />
+
+          <div class="Principle-message">
+            <div class="Principle-message__container">
+              <!-- Left Image Area -->
+              <div class="Principle-message__image-wrapper">
+                <div class="Principle-message__image-shape">
+                  <img
+                    src="../assets/images/principle-message//principle-image-signature-HQ.png"
+                    alt="Principal"
+                  />
+                </div>
+              </div>
+
+              <!-- Right Content -->
+              <div class="Principle-message__content">
+                <h3 class="typography-h3">
+                  مدير المدرسة <strong>رسالة</strong>
+                </h3>
+
+                <p class="Principle-message__subtitle">
+                  أعزائي عائلة دار المعرفة،
+                </p>
+
+                <p class="Principle-message__paragraph">
+                  اسمحوا لي أن أعرفكم بنفسي، اسمي السيد ستيفن جايلز، وأنا مدير
+                  مدرسة دار المعرفة. أنا فخور للغاية بقيادة هذا المجتمع المدرسي
+                  الرائع، الذي يعد تجسيدًا لعائلة ممتدة لنا جميعًا. بدءًا من
+                  طلابنا الأصغر سنًا الذين تم تكليفهم بمرحلة رياض الأطفال
+                  الممتازة لدينا، وصولاً إلى طلابنا الأكبر سنًا الذين يدرسون
+                  للالتحاق بجامعة أحلامهم، أنا فخور بالعرض التعليمي الذي يتلقاه
+                  كل واحد من طلابنا.
+                </p>
+
+                <p class="Principle-message__paragraph">
+                  أنا متحمس لضمان شعور الطلاب بالسعادة والثقة والقدرة على الوصول
+                  إلى آفاق جديدة والمجازفة وتحدي أنفسهم. سيتم رعايتهم وتحفيزهم
+                  حقًا لتعلم مهارات جديدة كل يوم من خلال عرض تعليمي مبتكر وشامل.
+                  أنا أؤمن ببيئة تأملية ومتسامحة ومحترمة للجميع، وتوسع الآفاق
+                  وتحدد الأهداف الطموحة. يواجه الطلاب تحديًا أكاديميًا ليكونوا
+                  طموحين، ويستهدفوا أرقى المسارات الوظيفية، مع مراعاة أن عواطفهم
+                  ورفاهيتهم واحترامهم لذاتهم يجب أن تكون في أعلى مستوياتها.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                           OUR CURRICULUM SECTION 
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+        <section class="our-curriculum-section" id="our-curriculum">
+          <div class="our-curriculum-heading">
+            <h3 class="typography-h3">ملكنا <strong>مقرر</strong></h3>
+          </div>
+
+          <div class="our-curriculum-sub-container">
+            <p class="subtitle our-curriculum-para-text">
+              أكثر من مجرد مدرسة - نحن بيئة رعاية حيث يزدهر الأطفال من خلال
+              الاكتشاف، <br />
+              التعاطف والمواطنة العالمية في بيئة البكالوريا الدولية ثنائية
+              اللغة.
+            </p>
+          </div>
+
+          <div class="our-curriculum-stage" id="our-curriculum-stage">
+            <!-- Button Animation -->
+            <div class="cta-button-wrapper-homepage">
+              <a href="#" class="cta-button-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="80"
+                  viewBox="0 0 200 80"
+                  fill="none"
+                >
+                  <path
+                    class="button-path-bg"
+                    d="M49.1556 16.0378C35.5696 19.3594 12.4824 26.5882 5.06401 39.2551C0.285518 47.4124 2.28556 55.9385 10.5072 60.6694C18.966 65.5421 33.7178 65.77 43.4448 66.1332C74.0211 67.2683 105.671 65.0179 135.774 59.6362C148.211 57.4119 174.55 52.9632 180.398 40.3249C186.245 27.6866 165.067 22.925 156.926 21.1559C121.786 13.5011 84.0925 7.50403 49.1556 16.0378Z"
+                    fill="#BB133E"
+                    transform="translate(97.5 36.5) scale(1.06) translate(-97.5 -36.5) translate(6 0)"
+                  />
+                  <path
+                    class="cta-outline"
+                    d="M68.5,27.8c54.7-12.7,111.7-15.3,167.3-7.5,24.1,3.4,48.6,5.8,72.2,11.8s38,9.3,53.3,20.6c4.1,3,7.9,6.6,9.9,11.2,4.1,9.4-.4,20.7-8,27.6-12.1,11-29.2,14.4-44.8,17.2-58.9,10.5-119.9,10.9-179.5,8.5-34.5-1.3-69.4-3.2-102.1-15.3-16.8-6.2-34.4-16.6-29-37.6,4.3-16.4,19.8-29.9,34.2-37.7,23.5-12.7,50.7-16.8,77-19,28.6-2.4,57.8-2.4,86.4-.5,46.5,2.9,92.6,11.1,137.2,24.4"
+                    transform="matrix(0.514 0 0 0.514 9.8 -1.2)"
+                  />
+                </svg>
+
+                <div class="cta-button-text">عرض الكل</div>
+              </a>
+            </div>
+
+            <div class="our-curriculum-tree-desktop">
+              <img
+                src="../assets/images/our-curriculum/main-tree.png"
+                class="our-curriculum-tree"
+                alt=""
+              />
+            </div>
+
+            <div class="our-curriculum-tree-mobile">
+              <img
+                src="../assets/images/our-curriculum/main-tree-mobile-updated-v2.png"
+                class="our-curriculum-tree1"
+                alt=""
+              />
+            </div>
+
+            <img
+              src="../assets/images/our-curriculum/red-leaf.png"
+              class="our-curriculum-leaf our-curriculum-leaf--red"
+              id="leaf-red"
+              alt=""
+            />
+            <img
+              src="../assets/images/our-curriculum/yellow-leaf.png"
+              class="our-curriculum-leaf our-curriculum-leaf--yellow"
+              id="leaf-yellow"
+              alt=""
+            />
+            <img
+              src="../assets/images/our-curriculum/blue-leaf.png"
+              class="our-curriculum-leaf our-curriculum-leaf--blue"
+              id="leaf-blue"
+              alt=""
+            />
+            <img
+              src="../assets/images/our-curriculum/purple-leaf.png"
+              class="our-curriculum-leaf our-curriculum-leaf--purple"
+              id="leaf-purple"
+              alt=""
+            />
+
+            <div class="our-curriculum-entries">
+              <div
+                class="our-curriculum-entry our-curriculum-entry--title-texts"
+              >
+                <div class="our-curriculum-heading-mobile">
+                  <h3 class="o-c-typography-h3-mobile">
+                    نحن <br />
+                    <strong>المناهج الدراسية </strong>
+                  </h3>
+                </div>
+
+                <div class="our-curriculum-sub-container-mobile">
+                  <p class="subtitle our-curriculum-para-text">
+                    أكثر من مجرد مدرسة - نحن بيئة رعاية حيث يزدهر الأطفال من
+                    خلال الاكتشاف، التعاطف والمواطنة العالمية في بيئة البكالوريا
+                    الدولية ثنائية اللغة.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="our-curriculum-entry our-curriculum-entry--early-years"
+              >
+                <h3 data-en="Early Years" data-ar="مرحلة الطفولة المبكرة">
+                  السنوات الأولى
+                </h3>
+                <p>
+                  برنامج دبلوم البكالوريا الدولية (DP) مخصص للطلاب الذين تتراوح
+                  أعمارهم بين 16 و19 عامًا. يتكون المنهج الدراسي لبرنامج الدبلوم
+                  من ست مجموعات موضوعية والمجموعة الأساسية لبرنامج الدبلوم،
+                </p>
+              </div>
+              <div class="our-curriculum-entry our-curriculum-entry--primary">
+                <h3 data-en="Primary Years" data-ar="مرحلة السنوات الابتدائية">
+                  السنوات الابتدائية
+                </h3>
+                <p>
+                  برنامج دبلوم البكالوريا الدولية (DP) مخصص للطلاب الذين تتراوح
+                  أعمارهم بين 16 و19 عامًا. يتكون المنهج الدراسي لبرنامج الدبلوم
+                  من ست مجموعات موضوعية والمجموعة الأساسية لبرنامج الدبلوم،
+                </p>
+              </div>
+              <div
+                class="our-curriculum-entry our-curriculum-entry--middle-years"
+              >
+                <h3>السنوات المتوسطة</h3>
+                <p>
+                  برنامج دبلوم البكالوريا الدولية (DP) مخصص للطلاب الذين تتراوح
+                  أعمارهم بين 16 و19 عامًا. يتكون المنهج الدراسي لبرنامج الدبلوم
+                  من ست مجموعات موضوعية والمجموعة الأساسية لبرنامج الدبلوم،
+                </p>
+              </div>
+              <div class="our-curriculum-entry our-curriculum-entry--diploma">
+                <h3 data-en="Diploma Program" data-ar="برنامج الدبلوما">
+                  برنامج الدبلوم
+                </h3>
+                <p>
+                  برنامج دبلوم البكالوريا الدولية (DP) مخصص للطلاب الذين تتراوح
+                  أعمارهم بين 16 و19 عامًا. يتكون المنهج الدراسي لبرنامج الدبلوم
+                  من ست مجموعات موضوعية والمجموعة الأساسية لبرنامج الدبلوم،
+                </p>
+              </div>
+              <div class="our-curriculum-entry our-curriculum-entry--career">
+                <h3 data-en="Career Related">ذات صلة بالمهنة</h3>
+                <p>
+                  برنامج دبلوم البكالوريا الدولية (DP) مخصص للطلاب الذين تتراوح
+                  أعمارهم بين 16 و19 عامًا. يتكون المنهج الدراسي لبرنامج الدبلوم
+                  من ست مجموعات موضوعية والمجموعة الأساسية لبرنامج الدبلوم،
+                </p>
+              </div>
+            </div>
+
+            <!-- <div class="our-curriculum-sand"></div> -->
+
+            <!-- <div class="our-curriculum-cta">
+              <div class="button-wrapper">
+                <img
+                  src="../assets/images/home-page/Button.png"
+                  alt="View All Button"
+                />
+                <span class="button-text" data-en="VIEW ALL" data-ar="عرض الكل"
+                  >عرض الكل</span
+                >
+              </div>
+            </div> -->
+          </div>
+
+          <div class="our-curriculum-section-bottom-logo">
+            <img
+              src="../assets/images/our-curriculum/bottom-logo.png"
+              alt="Bottom Logos"
+            />
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                             IN NUMBERS SECTION SECTION 
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+        <section class="in-numbers-section">
+          <div class="in-numbers-container">
+            <img
+              class="in-numbers-artwork"
+              src="./assets/images/in-numbers/in-numbers-artwork.png"
+              alt=""
+              role="presentation"
+              aria-hidden="true"
+            />
+
+            <!-- Heading -->
+            <div class="in-numbers-heading">
+              <h4 class="in-numbers-heading__subtitle">دار المعرفة</h4>
+              <h3 class="in-numbers-heading__title">في أرقام</h3>
+            </div>
+
+            <!-- Stats -->
+            <div class="in-numbers-grid">
+              <div class="in-numbers-item">
+                <span class="in-numbers-item__value"
+                  >95<span class="in-numbers-item__value_plus">+</span></span
+                >
+                <span class="in-numbers-item__label">معدل إنجاز الطلاب</span>
+              </div>
+
+              <div class="in-numbers-item">
+                <span class="in-numbers-item__value"
+                  >90<span class="in-numbers-item__value_plus">+</span></span
+                >
+                <span class="in-numbers-item__label">نجاح التنسيب الجامعي</span>
+              </div>
+
+              <div class="in-numbers-item">
+                <span class="in-numbers-item__value"
+                  >1<span class="in-numbers-item__value_plus">:</span>10</span
+                >
+                <span class="in-numbers-item__label"
+                  >نسبة الطلاب إلى المعلمين</span
+                >
+              </div>
+
+              <div class="in-numbers-item">
+                <div>
+                  <span class="in-numbers-item__value">4.8</span>
+                  <span class="in-numbers-item__value-s">/5</span>
+                </div>
+
+                <span class="in-numbers-item__label">درجة رضا الوالدين</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                  LOGO SLIDER SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+           <section class="logo-slider-section" aria-label="Partner universities">
+      <div class="logo-slider-track-wrapper">
+        <div class="logo-slider-track">
+          <!-- ── SET 1 ── -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (1).png" alt="Logo 1" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (2).png" alt="Logo 2" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (3).png" alt="Logo 3" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (4).png" alt="Logo 4" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (5).png" alt="Logo 5" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (6).png" alt="Logo 6" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (1).png" alt="Logo 7" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <!-- ── SET 2 (identical copy for seamless loop) ── -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (2).png" alt="Logo 1" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (3).png" alt="Logo 2" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (1).png" alt="Logo 3" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (6).png" alt="Logo 4" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (5).png" alt="Logo 5" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (3).png" alt="Logo 6" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item">
+            <img src="../assets/images/logo-slider/logo1 (2).png" alt="Logo 7" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+
+ <!-- ── SET 3 (identical copy for wide-screen seamless loop) ── -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (1).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (2).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (3).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (4).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (5).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (6).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <div class="logo-slider-item" aria-hidden="true">
+            <img src="../assets/images/logo-slider/logo1 (1).png" alt="" />
+          </div>
+          <!-- <div class="logo-slider-divider"></div> -->
+          <!-- <div class="logo-slider-divider"></div> -->
+        </div>
+      </div>
+    </section>
+
+        <!-- ════════════════════════════════════
+       COLORFUL LEAVES DIVIDER SECTION
+  ═════════════════════════════════════════-->
+        <section class="colorful-leaf-divider-container">
+          <div class="colorful-leaf-divider">
+            <img
+              src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+              alt="Colorful Leaves"
+            />
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                  SUCCESS STORIES SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+        <section class="success-stories">
+          <div class="container">
+            <div class="header">
+              <h3 class="typography-h3">نجاح <strong>قصص</strong></h3>
+
+              <p class="subtitle">
+                احصل على نظرة خاطفة على الأحداث القادمة والمنازل المفتوحة
+                والخاصة
+                <span class="desktop-break"></span>
+                الأنشطة - حيث يلتقي التعلم بالمجتمع.
+              </p>
+
+              <div class="button-wrapper">
+                <img
+                  src="../assets/images/home-page/Button.png"
+                  alt="View All Button"
+                />
+                <span class="button-text" data-en="VIEW ALL" data-ar="عرض الكل"
+                  >عرض الكل</span
+                >
+              </div>
+            </div>
+
+            <div class="grid">
+              <div class="card">
+                <div class="card-image">
+                  <svg viewBox="0 0 447 440" class="shape-svg">
+
+                    <!-- CLIP PATH (your exact shape) -->
+                    <defs>
+                      <clipPath id="imgClip">
+                        <path d="M402.612 377.759C396.568 383.324 389.385 386.884 381.536 388.959C366.41 392.927 351.236 396.691 336.084 400.513C331.688 401.613 327.254 402.483 322.88 403.641C292.106 411.834 261.126 419.183 230.346 427.282C229.498 427.505 228.628 427.668 227.746 427.851C226.544 428.466 225.175 428.476 223.903 428.861C218.529 430.173 213.146 431.512 207.772 432.825C204.381 433.929 200.929 434.736 197.481 435.598C195.362 436.317 193.209 436.884 190.993 437.187C189.151 437.658 187.306 438.081 185.407 438.239C183.686 438.514 181.996 438.885 180.249 438.839C176.845 439.309 173.438 439.221 170.052 438.81C164.327 438.42 158.905 436.971 153.736 434.523C151.273 433.362 148.972 431.972 146.693 430.505C144.475 429.064 142.732 427.161 141.137 425.112C135.842 419.403 130.554 413.692 125.299 407.949C121.844 404.176 118.415 400.349 114.975 396.541C109.824 390.973 104.657 385.401 99.5366 379.826C95.3329 375.24 91.1895 370.64 87.0142 366.039C86.4196 365.916 86.3226 365.365 86.0655 364.947C82.4325 361.064 78.8053 357.171 75.1879 353.253C73.7622 351.722 72.3899 350.147 70.9798 348.58C66.0605 343.285 60.9619 338.143 56.4259 332.512C51.4464 326.346 49.6162 319.133 50.0657 311.244C50.7136 299.842 51.2958 288.432 51.8966 277.034C52.0538 274.129 52.2092 271.216 52.3792 268.332C52.4343 263.73 52.6999 259.142 53.0783 254.56C53.1028 252.826 52.9617 251.098 53.4615 249.419C53.2044 249.001 53.5061 248.588 53.5084 248.189C53.7882 242.674 54.0639 237.176 54.3512 231.659C54.7377 223.705 55.1056 215.739 55.4921 207.785C55.4995 207.544 55.5825 207.286 55.6393 207.017C55.6427 206.793 55.6385 206.571 55.6629 206.335C55.5964 205.88 55.513 205.421 55.7362 204.979C55.8586 202.504 55.9716 200.024 56.1109 197.553C56.1747 196.327 56.2532 195.13 56.317 193.904C56.5094 190.297 56.7145 186.712 56.9051 183.098C56.584 182.679 56.9216 182.385 57.0753 182.054C57.0083 182.006 57.0093 181.942 57.0818 181.877C56.8653 181.633 56.9229 181.436 57.1817 181.248C57.186 180.961 57.1927 180.648 57.2273 180.353C57.1002 177.085 57.3813 173.824 57.5252 170.555C57.5648 169.566 57.6967 168.563 57.7589 167.569C57.8435 166.465 57.9094 165.351 57.9939 164.247C58.1027 161.68 58.2074 159.13 58.3614 156.552C58.6433 151.148 58.985 145.762 59.2499 140.354L60.5655 118.112C60.521 117.445 60.5406 116.779 60.6654 116.121C60.7567 114.944 60.801 113.77 60.883 112.588C60.8752 112.112 60.8549 111.344 60.8453 110.86C60.798 110.01 60.92 109.169 61.0908 108.333C61.4356 102.993 61.624 97.667 62.7203 92.407C63.7903 87.2728 65.8617 82.9799 71.2012 81.0778C71.6161 80.7736 72.0726 80.5792 72.5825 80.5794C72.615 80.5479 72.6444 80.4693 72.6915 80.4663C73.527 80.2231 74.4376 79.6197 75.2216 79.6674L81.7333 78.519C81.7786 78.5084 81.8088 78.5013 81.8559 78.4983L81.9012 78.4877C82.2047 78.4565 82.5671 78.5072 82.859 78.4947C84.2004 78.2686 85.5073 77.963 86.8514 78.055C87.4712 78.0136 88.0244 77.5177 88.6859 77.8251C89.6148 77.5043 90.5841 77.4927 91.5693 77.5491C92.8698 77.4203 94.2004 77.2844 95.5177 77.1595C96.0782 76.9329 96.6695 76.9061 97.2727 76.9642C101.099 76.4598 104.92 76.1078 108.774 75.8598C110.146 75.4912 111.576 75.5073 113.002 75.4048C115.139 75.2078 117.283 75.041 119.409 74.8626C120.942 74.5359 122.509 74.4243 124.068 74.3785C128.331 73.9391 132.591 73.5166 136.85 73.0941C137.941 72.9903 139.051 72.898 140.161 72.8058C145.487 72.2772 150.809 71.7655 156.15 71.2654C174.771 69.4998 193.407 67.7626 212.047 66.0086C212.252 66.0004 212.457 65.9923 212.681 65.9957C213.093 65.9154 213.501 65.788 213.897 65.7432C232.909 63.9101 251.894 62.0673 270.899 60.236C278.614 59.4992 286.082 60.4297 293.089 63.8503C296.411 65.4873 299.501 67.5931 302.219 70.1844C303.711 71.3174 304.971 72.6878 306.238 74.0488C313.385 81.8186 320.516 89.5844 327.642 97.3671C327.863 97.5944 328.016 97.8771 328.193 98.1226C330.217 100.27 332.348 102.33 334.161 104.662C337.837 108.32 341.05 112.421 344.664 116.117C347.2 118.719 349.718 121.309 352.16 123.981C363.312 136.168 374.539 148.266 385.542 160.6C390.819 166.504 396.405 172.162 401.664 178.126C402.051 178.554 402.383 179.018 402.765 179.462C408.362 185.539 413.965 191.646 419.57 197.729C421.396 199.708 423.305 201.636 425.042 203.716C427.413 206.563 429.74 209.461 431.907 212.492C441.252 225.675 443.978 240.327 441.055 256.07C439.887 262.286 437.974 268.311 436.197 274.375C433.941 282.034 431.69 289.683 429.5 297.35C427.251 305.278 425.101 313.222 422.912 321.168L416.457 344.532C414.62 351.192 412.684 357.836 410.949 364.52C409.571 369.87 406.577 374.171 402.6 377.81Z"/>
+                      </clipPath>
+                    </defs>
+
+                    <!-- IMAGE (dynamic) -->
+                    <image 
+                      href="../assets/images/home-page/success-story-3.png"
+                      width="447"
+                      height="440"
+                      preserveAspectRatio="xMidYMid slice"
+                      clip-path="url(#imgClip)"
+                    />
+
+                    <!-- RED STROKE -->
+                    <path d="M0.186983 133.628C-0.321502 132.514 0.142494 130.895 2.38155 125.795C11.6958 104.658 26.6154 80.8795 42.2222 62.314C47.7778 55.6787 48.6604 54.664 52.6633 50.3893C64.1998 38.0053 78.2177 25.8751 95.9833 12.9311C106.83 5.02192 114.489 0.403439 117.458 0.0269558C118.867 -0.147343 120.262 0.541186 120.657 1.58448C120.928 2.35778 120.901 2.65566 120.375 3.69129C119.328 5.82086 116.827 8.24763 105.75 17.9749C76.2274 43.8928 68.1065 51.4751 53.8202 66.5012C42.0074 78.9501 28.7461 95.5067 19.852 108.989C17.457 112.631 15.54 115.668 7.97969 128.051C5.36459 132.284 4.16652 133.769 2.7828 134.401C1.54325 134.946 0.68923 134.683 0.186983 133.628Z" fill="#BB133E"/>
+
+                    <!-- BEIGE STROKE -->
+                    <path d="M363.169 424.809C363.778 425.16 364.729 424.983 367.769 423.982C380.366 419.811 394.78 412.578 406.251 404.668C410.349 401.853 410.978 401.404 413.641 399.348C421.354 393.428 429.058 386.074 437.431 376.622C442.548 370.851 445.608 366.723 445.985 365.046C446.162 364.25 445.844 363.414 445.269 363.131C444.842 362.934 444.67 362.933 444.049 363.177C442.774 363.659 441.249 364.957 435.081 370.761C418.645 386.227 413.864 390.457 404.49 397.806C396.725 403.881 386.531 410.56 378.335 414.909C376.121 416.08 374.279 417.01 366.784 420.657C364.221 421.921 363.306 422.525 362.869 423.282C362.489 423.961 362.593 424.464 363.169 424.809Z" fill="#D29163"/>
+
+                  </svg>
+                </div>
+                <div class="card-content">
+                  <p class="tag">مهرجان العقول المبدعة</p>
+                  <h4 class="card-title">
+                    احتفال بالخيال يضم الفن <br />
+                    والتصميم والعروض،
+                  </h4>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-image middle">
+                  <svg viewBox="0 0 400 428" class="shape-svg">
+
+                    <!-- CLIP PATH -->
+                    <defs>
+                      <clipPath id="imgClip2">
+                        <path d="M329.627 384.955C322.474 388.997 314.67 390.828 306.555 391.06C290.922 391.479 275.29 391.689 259.665 391.96C255.134 392.03 250.619 391.867 246.096 391.999C214.265 392.969 182.425 393.07 150.61 393.946C149.733 393.97 148.848 393.931 147.949 393.908C146.637 394.234 145.303 393.931 143.976 394.016C138.445 394.071 132.898 394.148 127.366 394.203C123.813 394.505 120.268 394.505 116.715 394.559C114.488 394.777 112.261 394.839 110.035 394.629C108.134 394.668 106.241 394.66 104.356 394.381C102.618 394.257 100.888 394.234 99.1968 393.791C95.7755 393.473 92.4783 392.612 89.2742 391.441C83.7892 389.757 78.8396 387.112 74.3632 383.551C72.2297 381.859 70.3057 379.982 68.4205 378.035C66.5896 376.126 65.325 373.876 64.2389 371.518C60.3831 364.753 56.5351 357.988 52.7259 351.199C50.22 346.739 47.753 342.231 45.2704 337.739C41.5232 331.145 37.7605 324.543 34.0444 317.948C30.9955 312.525 28.0086 307.103 24.9908 301.672C24.4399 301.416 24.471 300.857 24.3158 300.392C21.6625 295.784 19.017 291.167 16.387 286.528C15.3475 284.713 14.3699 282.866 13.3536 281.02C9.7694 274.744 5.9757 268.576 2.84144 262.059C-0.603146 254.922 -0.742792 247.482 1.49153 239.902C4.7189 228.948 7.88419 217.97 11.065 207.008C11.8796 204.215 12.6942 201.414 13.5166 198.645C14.6182 194.176 15.9216 189.769 17.3335 185.394C17.7525 183.71 18.0085 181.996 18.8774 180.475C18.7222 180.01 19.1101 179.676 19.2032 179.288C20.7316 173.982 22.2522 168.691 23.7882 163.384C25.976 155.727 28.1483 148.054 30.3361 140.397C30.3981 140.164 30.5378 139.932 30.6542 139.683C30.7085 139.466 30.755 139.249 30.8326 139.024C30.8714 138.566 30.8947 138.101 31.2127 137.72C31.8954 135.339 32.5704 132.949 33.2686 130.575C33.61 129.396 33.9591 128.248 34.3004 127.069C35.309 123.601 36.3253 120.156 37.3339 116.681C37.1166 116.2 37.5123 115.99 37.7373 115.703C37.683 115.641 37.6985 115.579 37.7838 115.532C37.6287 115.245 37.7295 115.067 38.0243 114.943C38.0942 114.663 38.1717 114.361 38.2726 114.082C38.8932 110.87 39.9095 107.759 40.794 104.609C41.0577 103.655 41.4146 102.708 41.7017 101.754C42.0353 100.699 42.3533 99.6283 42.6869 98.5732C43.3774 96.0984 44.0601 93.639 44.7971 91.1642C46.3022 85.9663 47.8616 80.7994 49.3511 75.5938L55.6972 54.2358C55.8058 53.5763 55.9765 52.9324 56.2481 52.3195C56.6049 51.1946 56.9152 50.0619 57.2644 48.9292C57.3652 48.4638 57.5204 47.7112 57.6212 47.238C57.7686 46.4001 58.079 45.6088 58.4358 44.833C59.9874 39.7126 61.3839 34.569 63.6493 29.697C65.8603 24.9413 68.8549 21.2329 74.4873 20.5967C74.9605 20.395 75.4493 20.3097 75.9458 20.4261C75.9846 20.4028 76.0311 20.333 76.0777 20.3407C76.9466 20.2942 77.9707 19.914 78.7232 20.139L85.3253 20.5036C85.3719 20.5036 85.4029 20.5036 85.4495 20.5114H85.496C85.7986 20.5502 86.1399 20.6821 86.427 20.7364C87.7846 20.8217 89.1268 20.8217 90.4146 21.2174C91.0275 21.3182 91.6792 20.9614 92.2533 21.4113C93.2308 21.3105 94.1773 21.52 95.1238 21.7992C96.4194 21.9699 97.746 22.1406 99.0571 22.319C99.6545 22.2259 100.236 22.3345 100.81 22.5285C104.651 22.9086 108.452 23.4362 112.261 24.0724C113.681 24.0258 115.07 24.3672 116.482 24.5921C118.607 24.887 120.733 25.2128 122.843 25.5231C124.411 25.5542 125.962 25.8024 127.49 26.1127C131.742 26.6558 135.986 27.2144 140.229 27.773C141.315 27.9204 142.417 28.0833 143.519 28.2462C148.825 28.9444 154.124 29.6582 159.438 30.3874C177.972 32.9088 196.514 35.4612 215.064 37.9981C215.265 38.0369 215.467 38.0757 215.684 38.13C216.103 38.1455 216.53 38.1145 216.926 38.161C235.855 40.7057 254.762 43.2348 273.684 45.7795C281.364 46.819 288.424 49.4258 294.468 54.3521C297.33 56.7028 299.859 59.457 301.915 62.599C303.11 64.042 304.026 65.6634 304.949 67.2771C310.139 76.4704 315.314 85.656 320.48 94.8571C320.643 95.1286 320.729 95.4389 320.845 95.7182C322.327 98.2706 323.933 100.761 325.166 103.445C327.913 107.844 330.108 112.569 332.785 116.991C334.662 120.102 336.524 123.197 338.293 126.355C346.377 140.762 354.554 155.099 362.459 169.614C366.253 176.565 370.404 183.346 374.166 190.351C374.446 190.856 374.663 191.383 374.934 191.903C379 199.095 383.065 206.317 387.138 213.517C388.464 215.86 389.884 218.172 391.102 220.592C392.762 223.905 394.368 227.256 395.788 230.701C401.886 245.666 401.203 260.554 394.772 275.217C392.219 281.004 388.984 286.435 385.873 291.936C381.932 298.879 377.999 305.815 374.12 312.781C370.124 319.989 366.222 327.235 362.281 334.473L350.675 355.753C347.37 361.82 343.972 367.848 340.76 373.962C338.2 378.857 334.305 382.364 329.604 385.001L329.627 384.955Z"/>
+                      </clipPath>
+                    </defs>
+
+                    <!-- IMAGE -->
+                    <image 
+                      href="../assets/images/home-page/success-story-2.png"
+                      width="400"
+                      height="428"
+                      preserveAspectRatio="xMidYMid slice"
+                      clip-path="url(#imgClip2)"
+                      class="success-stories-middle-image"
+                    />
+
+                    <!-- RED SHAPE -->
+                    <path d="M350.324 78.7339C350.558 77.9321 350.086 76.8843 348.075 73.6593C339.716 60.2981 327.314 45.7026 314.957 34.6941C310.556 30.7575 309.861 30.1587 306.739 27.6642C297.737 20.4313 287.083 13.6127 273.82 6.61152C265.721 2.33277 260.097 -0.035999 258.055 0.000413662C257.087 0.0206721 256.212 0.6222 256.048 1.36534C255.94 1.9141 255.988 2.11258 256.445 2.76036C257.36 4.09591 259.286 5.4897 267.719 10.9736C290.191 25.5844 296.418 29.9093 307.536 38.6571C316.731 45.9067 327.307 55.7883 334.633 64.0213C336.606 66.2464 338.198 68.1093 344.516 75.7312C346.696 78.3331 347.651 79.2186 348.647 79.5097C349.537 79.7567 350.088 79.4958 350.324 78.7339Z" fill="#BB133E"/>
+
+                    <!-- BEIGE SHAPE -->
+                    <path d="M33.744 349.027C33.4384 349.661 33.6852 350.596 34.9094 353.553C40.0025 365.807 48.2832 379.645 57.0219 390.498C60.1323 394.377 60.627 394.971 62.8742 397.474C69.3501 404.728 77.2543 411.865 87.3011 419.515C93.4353 424.19 97.7785 426.936 99.4789 427.188C100.286 427.305 101.096 426.927 101.335 426.332C101.501 425.891 101.489 425.72 101.199 425.119C100.624 423.883 99.2163 422.459 92.9719 416.737C76.3299 401.492 71.7575 397.038 63.7343 388.234C57.1005 380.941 49.6847 371.27 44.7398 363.418C43.4084 361.297 42.3442 359.529 38.1522 352.325C36.7015 349.862 36.0314 348.995 35.2443 348.615C34.539 348.287 34.0453 348.427 33.744 349.027Z" fill="#D29163"/>
+
+                  </svg>
+                </div>
+                <div class="card-content">
+                  <p class="tag">مهرجان العقول المبدعة</p>
+                  <h4 class="card-title">
+                    احتفال بالخيال يضم الفن <br />
+                    والتصميم والعروض،
+                  </h4>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-image">
+                  <svg viewBox="0 0 483 419" class="shape-svg">
+
+                    <!-- CLIP PATH -->
+                    <defs>
+                      <clipPath id="imgClip3">
+                        <path d="M440.675 239.095C438.475 247.011 434.251 253.824 428.677 259.727C417.919 271.077 407.014 282.279 396.157 293.519C393.003 296.773 389.695 299.85 386.59 303.142C364.768 326.335 342.325 348.92 320.448 372.038C319.845 372.674 319.192 373.272 318.539 373.892C317.842 375.049 316.685 375.779 315.807 376.777C311.934 380.727 308.067 384.704 304.194 388.654C301.895 391.38 299.388 393.887 296.914 396.438C295.493 398.166 293.963 399.785 292.24 401.211C290.923 402.582 289.579 403.915 288.049 405.051C286.732 406.192 285.493 407.399 283.984 408.282C281.34 410.476 278.399 412.199 275.305 413.636C270.237 416.324 264.866 417.954 259.183 418.601C256.478 418.914 253.79 418.947 251.08 418.903C248.436 418.848 245.951 418.151 243.515 417.251C236.005 415.194 228.501 413.132 221.007 411.025C216.081 409.643 211.149 408.2 206.217 406.779C198.905 404.766 191.576 402.758 184.285 400.723C178.295 399.044 172.348 397.322 166.374 395.615C165.804 395.824 165.431 395.407 164.992 395.188C159.857 393.805 154.722 392.412 149.582 390.991C147.563 390.442 145.567 389.828 143.542 389.241C136.57 387.337 129.526 385.659 122.702 383.267C115.219 380.656 109.86 375.494 106.08 368.554C100.616 358.526 95.0918 348.525 89.5895 338.525C88.1906 335.974 86.7863 333.418 85.4094 330.878C83.0285 326.939 80.8342 322.901 78.7386 318.809C77.8445 317.322 76.8131 315.929 76.3523 314.239C75.9135 314.02 75.9519 313.51 75.7434 313.17C73.0718 308.337 70.4057 303.52 67.7396 298.682C63.8721 291.72 59.9827 284.759 56.1152 277.797C55.9946 277.589 55.9287 277.325 55.8355 277.068C55.7203 276.876 55.5996 276.689 55.4953 276.475C55.1991 276.124 54.8864 275.778 54.8425 275.285C53.6411 273.118 52.4288 270.951 51.2439 268.779C50.6514 267.703 50.0864 266.645 49.4939 265.569C47.7549 262.404 46.0378 259.25 44.2934 256.079C43.7996 255.892 43.9313 255.465 43.8874 255.102C43.8051 255.097 43.7722 255.042 43.7996 254.949C43.4869 254.856 43.4321 254.658 43.5528 254.362C43.4047 254.115 43.2456 253.846 43.1194 253.577C41.2871 250.867 39.806 247.949 38.2041 245.096C37.7159 244.235 37.299 243.314 36.8272 242.436C36.317 241.454 35.7849 240.472 35.2747 239.49C34.013 237.252 32.7567 235.03 31.5279 232.759C28.9167 228.019 26.3658 223.263 23.7381 218.529L13.1231 198.939C12.7336 198.396 12.399 197.82 12.1576 197.195C11.6145 196.147 11.033 195.126 10.479 194.079C10.2211 193.678 9.79872 193.036 9.5354 192.63C9.04716 191.934 8.70705 191.155 8.41081 190.354C5.88735 185.636 3.23772 181.011 1.39449 175.964C-0.404847 171.038 -0.909541 166.299 2.62331 161.866C2.81531 161.389 3.10057 160.983 3.53395 160.714C3.54492 160.67 3.52846 160.588 3.56686 160.56C4.14835 159.913 4.60368 158.92 5.29488 158.547L10.2211 154.137C10.254 154.104 10.276 154.082 10.3144 154.054L10.3473 154.021C10.5887 153.835 10.9233 153.687 11.1647 153.522C12.185 152.622 13.1341 151.673 14.3245 151.043C14.8292 150.68 15.0376 149.967 15.7618 149.88C16.3817 149.117 17.199 148.596 18.0658 148.124C19.1026 147.329 20.1614 146.511 21.2146 145.71C21.5712 145.222 22.0595 144.888 22.6026 144.619C25.5868 142.172 28.6479 139.857 31.7912 137.613C32.7622 136.577 33.9856 135.836 35.1431 134.997C36.8546 133.702 38.5881 132.429 40.2997 131.157C41.4298 130.07 42.7025 129.149 44.0026 128.288C47.3928 125.665 50.7885 123.06 54.1842 120.454C55.0565 119.79 55.9507 119.126 56.8449 118.462C61.0909 115.204 65.3423 111.962 69.6158 108.72C84.5042 97.397 99.4201 86.0908 114.33 74.7681C114.5 74.6529 114.671 74.5377 114.863 74.4225C115.17 74.1373 115.45 73.8136 115.762 73.5668C130.947 61.9808 146.104 50.4003 161.283 38.8198C167.449 34.1239 174.285 30.9751 182.042 30.1851C185.728 29.8231 189.464 29.9822 193.139 30.7502C195.004 30.9257 196.798 31.4249 198.592 31.9132C208.763 34.7438 218.917 37.58 229.077 40.4326C229.384 40.5094 229.664 40.6685 229.943 40.7837C232.796 41.5407 235.693 42.1661 238.463 43.1919C243.515 44.3604 248.409 46.1488 253.428 47.3831C256.955 48.2553 260.461 49.1276 263.944 50.1095C279.848 54.5804 295.767 58.9362 311.621 63.6101C319.219 65.8428 326.949 67.7024 334.563 69.9955C335.117 70.1546 335.644 70.374 336.203 70.5496C344.163 72.7603 352.145 74.9931 360.116 77.2038C362.711 77.9225 365.349 78.5533 367.922 79.4036C371.438 80.5721 374.944 81.8064 378.383 83.2382C393.277 89.5084 403.322 100.518 409.142 115.434C411.43 121.332 412.982 127.459 414.672 133.548C416.795 141.245 418.918 148.931 421.101 156.6C423.372 164.521 425.737 172.404 428.068 180.309L434.909 203.563C436.862 210.19 438.722 216.856 440.773 223.449C442.425 228.721 442.15 233.955 440.691 239.144L440.675 239.095Z"/>
+                      </clipPath>
+                    </defs>
+
+                    <!-- IMAGE -->
+                    <image 
+                      href="../assets/images/home-page/success-story-1.png"
+                      width="483"
+                      height="419"
+                      preserveAspectRatio="xMidYMid slice"
+                      clip-path="url(#imgClip3)"
+                    />
+
+                    <!-- RED -->
+                    <path d="M434.172 305.596C435.015 305.615 435.879 304.881 438.369 302.078C448.675 290.439 458.936 274.534 465.759 259.61C468.204 254.291 468.568 253.457 470.016 249.761C474.229 239.094 477.54 226.925 480.229 212.163C481.875 203.148 482.439 197.045 481.781 195.064C481.466 194.125 480.62 193.429 479.855 193.463C479.294 193.501 479.117 193.599 478.633 194.214C477.627 195.455 476.874 197.698 474.17 207.352C466.968 233.081 464.706 240.282 459.681 253.407C455.51 264.267 449.228 277.16 443.541 286.453C442.002 288.959 440.695 290.997 435.289 299.148C433.45 301.953 432.889 303.115 432.913 304.162C432.947 305.095 433.366 305.564 434.172 305.596Z" fill="#BB133E"/>
+
+                    <!-- BEIGE -->
+                    <path d="M242.388 13.8657C242.156 13.2016 241.32 12.7147 238.364 11.4894C226.098 6.42617 210.457 2.49614 196.604 1.0011C191.662 0.457929 190.892 0.387974 187.533 0.206537C177.825 -0.343042 167.189 0.199106 154.675 1.89366C147.032 2.92579 142.02 4.05534 140.639 5.07935C139.985 5.56724 139.68 6.40744 139.931 6.99706C140.126 7.42571 140.256 7.53846 140.886 7.75869C142.167 8.22583 144.169 8.23781 152.63 7.86814C175.177 6.88031 181.56 6.79634 193.458 7.34848C203.307 7.81517 215.389 9.40954 224.437 11.4649C226.879 12.0234 228.881 12.5208 236.939 14.6509C239.707 15.3666 240.794 15.5061 241.619 15.218C242.35 14.9515 242.6 14.5031 242.388 13.8657Z" fill="#D29163"/>
+
+                  </svg>
+                </div>
+                <div class="card-content">
+                  <p class="tag">مهرجان العقول المبدعة</p>
+                  <h4 class="card-title">
+                    احتفال بالخيال يضم الفن <br />
+                    والتصميم والعروض،
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     OUR SCHOOL AT A GLANCE  –  Section
+══════════════════════════════════════════ -->
+        <section class="our-school-glance-main-container">
+          <div class="our-school-glance">
+            <div class="our-school-glance__video-wrapper" id="osgWrapper">
+              <!-- Replace src with your actual video file -->
+              <video
+                class="our-school-glance__video"
+                id="osgVideo"
+                src="../assets/videos/hero-section/hero-section-video.mp4"
+                preload="metadata"
+                playsinline
+              ></video>
+
+              <!-- Gradient overlay -->
+              <div class="our-school-glance__overlay"></div>
+
+              <!-- Heading text -->
+              <div class="our-school-glance__text">
+                <h3 class="our-school-glance__subtitle">
+                  مدرستنا في <strong>لمحة</strong>
+                </h3>
+              </div>
+
+              <button
+                class="our-school-glance__play-btn"
+                id="osgPlayBtn"
+                aria-label="Play video"
+              >
+                <div class="our-school-glance-play-btn-container">
+                  <div class="what-makes-us-unique-btn-animation-btn">
+                    <div
+                      class="what-makes-us-unique-btn-animation-circle"
+                    ></div>
+                    <div class="what-makes-us-unique-btn-animation-arrow">
+                      <img
+                        src="../assets/images/hero-section/play-button-hq.png"
+                        alt="Carousel Item 1"
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Invisible pause area (full card click while playing) -->
+              <div
+                class="our-school-glance__pause-area"
+                id="osgPauseArea"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                  JOIN OUR FAMILY SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+        <section class="join-family">
+          <div class="join-family_container">
+            <div class="join-family__wrapper">
+              <div class="join-family__image join-family__image--left">
+                <img
+                  src="../assets/images/join-our-family/Join Our Family - Kids playing.png"
+                  alt="Child learning"
+                  class="join-family__image--left-desktop"
+                />
+
+                <img
+                  src="../assets/images/join-our-family/Join Our Family - Kids playing-updated-mobile.png"
+                  alt="Child learning"
+                  class="join-family__image--left-mobile"
+                />
+              </div>
+
+              <div class="join-family__content">
+                <h3 class="typography-h3">انضم إلينا <strong>عائلة</strong></h3>
+
+                <p class="subtitle">
+                  يقوم فريقنا ببناء دروس ممتعة وأدوات رائعة ومسارات <br />
+                  واضحة للطلاقة. نحن نساعد كل طالب على اكتساب <br />
+                  مهارات جديدة والنمو بطريقة تناسب احتياجاته بشكل
+                  <br />
+                  أفضل.
+                </p>
+
+                <div class="button-wrapper">
+                  <img
+                    src="../assets/images/home-page/Button.png"
+                    alt="View All Button"
+                  />
+                  <span class="button-text">سجل الآن</span>
+                </div>
+              </div>
+
+              <div class="join-family__image join-family__image--right">
+                <img
+                  src="../assets/images/join-our-family/Join our family - Instructors teach kids.png"
+                  alt="Teacher with students"
+                  class="join-family__image--right-desktop"
+                />
+
+                <img
+                  src="../assets/images/join-our-family/Join our family - Instructors teach kids-mobile.png"
+                  alt="Teacher with students"
+                  class="join-family__image--right-mobile"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                  SOCIAL WALL SECTION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+        <section class="social-wall">
+          <div class="social-wall-title-container">
+            <h3 class="typography-h3">اجتماعي <strong>حائط</strong></h3>
+          </div>
+
+          <div class="social-wall__track" id="socialWallTrack">
+            <div class="social-wall__grid">
+              <!-- ── SET 1 ── -->
+              <div class="social-wall__col social-wall__col--1">
+                <a href="#" class="social-wall__card social-wall__card--hero">
+                  <img
+                    src="../assets/images/social-wall/item_1.png"
+                    alt="Students in library"
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div class="social-wall__col social-wall__col--2">
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-top"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_2.png"
+                    alt="Teacher with students"
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-bot"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_3.png"
+                    alt="Student smiling in class"
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div class="social-wall__col social-wall__col--3">
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-top"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_4.png"
+                    alt="Students studying"
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-bot"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_5.png"
+                    alt="Kids doing activity"
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div class="social-wall__col social-wall__col--4">
+                <a href="#" class="social-wall__card social-wall__card--tall">
+                  <img
+                    src="../assets/images/social-wall/item_6.jpg"
+                    alt="Teacher reading with student"
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <div class="social-wall__row">
+                  <a href="#" class="social-wall__card social-wall__card--sm">
+                    <img
+                      src="../assets/images/social-wall/item_7.png"
+                      alt="Student art activity"
+                      loading="lazy"
+                    />
+
+                    <div class="social-icon">
+                      <img
+                        src="../assets/images/social-wall/Instagram-Icon.png"
+                        alt="facebook"
+                      />
+                    </div>
+                  </a>
+                  <a href="#" class="social-wall__card social-wall__card--sm">
+                    <img
+                      src="../assets/images/social-wall/item_8.png"
+                      alt="Community event"
+                      loading="lazy"
+                    />
+
+                    <div class="social-icon">
+                      <img
+                        src="../assets/images/social-wall/Instagram-Icon.png"
+                        alt="facebook"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- ── SET 2 (repeat) ── -->
+              <div
+                class="social-wall__col social-wall__col--1"
+                aria-hidden="true"
+              >
+                <a href="#" class="social-wall__card social-wall__card--hero">
+                  <img
+                    src="../assets/images/social-wall/item_1.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div
+                class="social-wall__col social-wall__col--2"
+                aria-hidden="true"
+              >
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-top"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_2.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-bot"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_3.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div
+                class="social-wall__col social-wall__col--3"
+                aria-hidden="true"
+              >
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-top"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_4.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-bot"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_5.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div
+                class="social-wall__col social-wall__col--4"
+                aria-hidden="true"
+              >
+                <a href="#" class="social-wall__card social-wall__card--tall">
+                  <img
+                    src="../assets/images/social-wall/item_6.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </a>
+                <div class="social-wall__row">
+                  <a href="#" class="social-wall__card social-wall__card--sm">
+                    <img
+                      src="../assets/images/social-wall/item_7.png"
+                      alt=""
+                      loading="lazy"
+                    />
+
+                    <div class="social-icon">
+                      <img
+                        src="../assets/images/social-wall/Instagram-Icon.png"
+                        alt="facebook"
+                      />
+                    </div>
+                  </a>
+                  <a href="#" class="social-wall__card social-wall__card--sm">
+                    <img
+                      src="../assets/images/social-wall/item_8.png"
+                      alt=""
+                      loading="lazy"
+                    />
+
+                    <div class="social-icon">
+                      <img
+                        src="../assets/images/social-wall/Instagram-Icon.png"
+                        alt="facebook"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- ── SET 3 (repeat) ── -->
+              <div
+                class="social-wall__col social-wall__col--1"
+                aria-hidden="true"
+              >
+                <a href="#" class="social-wall__card social-wall__card--hero">
+                  <img
+                    src="../assets/images/social-wall/item_1.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div
+                class="social-wall__col social-wall__col--2"
+                aria-hidden="true"
+              >
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-top"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_2.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-bot"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_3.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div
+                class="social-wall__col social-wall__col--3"
+                aria-hidden="true"
+              >
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-top"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_4.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="social-wall__card social-wall__card--med-bot"
+                >
+                  <img
+                    src="../assets/images/social-wall/item_5.png"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="../assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+              </div>
+              <div
+                class="social-wall__col social-wall__col--4"
+                aria-hidden="true"
+              >
+                <a href="#" class="social-wall__card social-wall__card--tall">
+                  <img
+                    src="../assets/images/social-wall/item_6.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+
+                  <div class="social-icon">
+                    <img
+                      src="./assets/images/social-wall/Instagram-Icon.png"
+                      alt="facebook"
+                    />
+                  </div>
+                </a>
+                <div class="social-wall__row">
+                  <a href="#" class="social-wall__card social-wall__card--sm">
+                    <img
+                      src="../assets/images/social-wall/item_7.png"
+                      alt=""
+                      loading="lazy"
+                    />
+
+                    <div class="social-icon">
+                      <img
+                        src="../assets/images/social-wall/Instagram-Icon.png"
+                        alt="facebook"
+                      />
+                    </div>
+                  </a>
+
+                  <a href="" class="social-wall__card social-wall__card--sm">
+                    <img
+                      src="../assets/images/social-wall/item_8.png"
+                      alt=""
+                      loading="lazy"
+                    />
+
+                    <div class="social-icon">
+                      <img
+                        src="../assets/images/social-wall/Instagram-Icon.png"
+                        alt="facebook"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════════════════════════════════════
+                                  ADMISSION START
+  ═════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+
+        <section
+          class="enquiry-form-section enquiry-page enquiry-form-section-homepage"
+        >
+          <div class="enquiry-form-shell apply-now-form-shell">
+            <div class="apply-now-form-shell__bg" aria-hidden="true"></div>
+            <div class="enquiry-form-shell__card apply-now-form-shell__card">
+              <h3 class="enquiry-form-shell__admissions-title">القبول</h3>
+
+              <form class="enquiry-form" id="enquiry-form" novalidate>
+                <div class="enquiry-form-grid">
+                  <div class="apply-now-field enquiry-field">
+                    <label for="enquiry-name">اسم</label>
+                    <input
+                      class="apply-now-field__control enquiry-field__control"
+                      id="enquiry-name"
+                      name="name"
+                      type="text"
+                      placeholder="أدخل اسمك"
+                    />
+                  </div>
+                  <div class="apply-now-field enquiry-field">
+                    <label for="enquiry-email">بريد إلكتروني</label>
+                    <input
+                      class="apply-now-field__control enquiry-field__control"
+                      id="enquiry-email"
+                      name="email"
+                      type="text"
+                      placeholder="أدخل بريدك الإلكتروني"
+                    />
+                  </div>
+
+                  <div
+                    class="apply-now-field enquiry-field enquiry-field--phone"
+                  >
+                    <label for="enquiry-phone">رقم التليفون</label>
+                    <div class="enquiry-phone-wrap">
+                      <input
+                        class="apply-now-field__control enquiry-field__control enquiry-field__control--phone"
+                        id="enquiry-phone"
+                        name="phone"
+                        type="tel"
+                        inputmode="numeric"
+                        placeholder="أدخل رقمك"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="apply-now-field enquiry-field">
+                    <label for="enquiry-grade">درجة</label>
+                    <select
+                      class="apply-now-field__control apply-now-field__control--select enquiry-field__control enquiry-field__control--select"
+                      id="enquiry-grade"
+                      name="grade"
+                    >
+                      <!-- <option value="" disabled selected>ما قبل الروضة </option> -->
+                      <option value="pre-kg">مرحلة ما قبل الروضة</option>
+                      <option value="kg1">روضة 1</option>
+                      <option value="kg2">روضة 2</option>
+                      <option value="g1">الصف الأول</option>
+                      <option value="g2">الصف الثاني</option>
+                      <option value="g3">الصف الثالث</option>
+                      <option value="g4">الصف الرابع</option>
+                      <option value="g5">الصف الخامس</option>
+                      <option value="g6">الصف السادس</option>
+                      <option value="g7">الصف السابع</option>
+                      <option value="g8">الصف الثامن</option>
+                      <option value="g9">الصف التاسع</option>
+                      <option value="g10">الصف العاشر</option>
+                      <option value="g11">الصف الحادي عشر</option>
+                      <option value="g12">الصف الثاني عشر</option>
+                    </select>
+                  </div>
+
+                  <div
+                    class="apply-now-field enquiry-field enquiry-field--year"
+                  >
+                    <label for="enquiry-year-input">سنة الالتحاق</label>
+                    <select
+                      class="apply-now-field__control apply-now-field__control--select enquiry-field__control enquiry-field__control--select"
+                      id="enquiry-year-input"
+                      name="yearOfEntry"
+                    >
+                      <!-- Options populated dynamically by admission.js -->
+                    </select>
+                  </div>
+                </div>
+
+                <div
+                  class="enquiry-form-shell__actions apply-now-form-shell__actions"
+                >
+                  <button
+                    type="submit"
+                    class="cta-button-wrapper form-cta-button hero-cta-button enquiry-enrol-btn"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="200"
+                      height="80"
+                      viewBox="0 0 200 80"
+                      fill="none"
+                    >
+                      <path
+                        class="button-path-bg"
+                        d="M49.1556 16.0378C35.5696 19.3594 12.4824 26.5882 5.06401 39.2551C0.285518 47.4124 2.28556 55.9385 10.5072 60.6694C18.966 65.5421 33.7178 65.77 43.4448 66.1332C74.0211 67.2683 105.671 65.0179 135.774 59.6362C148.211 57.4119 174.55 52.9632 180.398 40.3249C186.245 27.6866 165.067 22.925 156.926 21.1559C121.786 13.5011 84.0925 7.50403 49.1556 16.0378Z"
+                        fill="#BB133E"
+                        transform="translate(97.5 36.5) scale(1.06) translate(-97.5 -36.5) translate(6 0)"
+                      />
+                      <path
+                        class="cta-outline"
+                        d="M68.5,27.8c54.7-12.7,111.7-15.3,167.3-7.5,24.1,3.4,48.6,5.8,72.2,11.8s38,9.3,53.3,20.6c4.1,3,7.9,6.6,9.9,11.2,4.1,9.4-.4,20.7-8,27.6-12.1,11-29.2,14.4-44.8,17.2-58.9,10.5-119.9,10.9-179.5,8.5-34.5-1.3-69.4-3.2-102.1-15.3-16.8-6.2-34.4-16.6-29-37.6,4.3-16.4,19.8-29.9,34.2-37.7,23.5-12.7,50.7-16.8,77-19,28.6-2.4,57.8-2.4,86.4-.5,46.5,2.9,92.6,11.1,137.2,24.4"
+                        transform="matrix(0.514 0 0 0.514 9.8 -1.2)"
+                      />
+                    </svg>
+                    <div class="cta-button-text">سجل الآن</div>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+       <!-- Attached JavaScript Files -->
+    <script src="../js/vendor/jquery_v3.7.1.min.js"></script>
+    <script src="../js/vendor/slick.min.js"></script>
+    <script src="../js/vendor/slick-animation.js"></script>
+    <script src="../js/vendor/gsap.min.js"></script>
+    <script src="../js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="../js/vendor/ScrollTrigger.min.js"></script>
+    <script src="../js/homepage/hero-scroll-to-ib-section.js"></script>
+   <!-- <script src="./js/homepage/campus-reveal.js"></script> -->
+    <script src="../js/homepage/ib-bilingual-school.js"></script>
+    <script src="../js/homepage/our-curriculum.js"></script>
+    <script src="../js/homepage/social-wall-slider.js"></script>
+    <script src="../js/homepage/our-school-at-glance.js"></script>
+    <script src="../js/home-page-carousel.js"></script>
+    <script src="../js/vendor/intlTelInput.min.js"></script>
+    <script src="../js/main.js"></script>
+
+  </body>
+</html>

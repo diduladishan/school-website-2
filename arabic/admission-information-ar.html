@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Dar Al Marefa School Website</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/about-us.css" />
+    <link rel="stylesheet" href="../css/language-switch.css" />
+    <link rel="stylesheet" href="../css/admission.css" />
+    <link rel="stylesheet" href="../css/arabic.css" />
+    <link rel="stylesheet" href="../css/admission-ar.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles-ar.css">
+  </head>
+
+  <body>
+    <div class="arabic-page arabic_page">
+      <!-- Header and Hero Section -->
+      <section class="admission-hero">
+        <div class="admission-hero__tree-bg" aria-hidden="true"></div>
+
+        <!-- Navbar -->
+        <nav class="hero__nav">
+          <!-- Logos -->
+          <div class="hero__logos">
+            <img
+              class="hero__logo"
+              src="../assets/images/ABOUT-US/Marefa-logo.png"
+              alt="Dar Al Marefa"
+            />
+            <img
+              class="hero__logo-colegio-del-mundo"
+              src="../assets/images/hero-section/colegio-del-mundo.png"
+              alt="Colegio del Mundo IB"
+            />
+          </div>
+
+          <div class="hero__nav-spacer"></div>
+
+          <div class="nav-links-search-gap">
+            <!-- Nav links (desktop) -->
+            <ul class="hero__nav-links">
+              <li><a href="#">الاستفسارات</a></li>
+              <li><a href="#">تواصل معنا</a></li>
+            </ul>
+
+            <!-- Search + Language Toggle -->
+            <div class="hero-divider-n-text">
+              <div class="hero__search-wrap">
+                <input
+                  type="text"
+                  class="hero__search-input"
+                  id="heroSearchInput"
+                  placeholder="بحث…"
+                  aria-label="Search"
+                />
+                <button
+                  class="hero__search-btn"
+                  id="heroSearchBtn"
+                  aria-label="Toggle search"
+                >
+                  <img
+                    src="../assets/images/hero-section/search-icon.svg"
+                    alt="Search Icon"
+                    class="hero-search-icon"
+                  />
+                </button>
+              </div>
+
+              <!-- Divider + Language switcher -->
+              <div class="hero__nav-divider"></div>
+              <span class="hero__arabic" id="langToggle">العربية</span>
+            </div>
+          </div>
+
+          <!-- Menu button -->
+          <button class="hero__menu-btn" aria-label="Open menu">
+            <img
+              src="../assets/images/hero-section/menu-button.png"
+              alt="Menu"
+            />
+          </button>
+        </nav>
+
+        <div class="admission-hero__content">
+          <h1 class="admission-hero__title">
+            <span class="admission-hero__title-main">معلومات </span
+            ><span class="admission-hero__title-accent">العائلات الجديدة</span>
+          </h1>
+          <p>
+            القبول
+            <span class="admission-hero__breadcrumb-separator"
+              ><img
+                src="../assets/images/admission-process/right-arrow.svg"
+                alt="Breadcrumb arrow" /></span
+            >معلومات العائلات الجديدة
+          </p>
+        </div>
+
+        <div class="admission-hero__leaf-divider">
+          <img
+            src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+            alt="Colorful Leaves"
+          />
+        </div>
+
+        <!-- Horizontally scrollable pill navigation -->
+        <div class="admission-pill-nav-wrap">
+          <nav
+            class="admission-pill-nav"
+            role="tablist"
+            aria-label="Admission sections"
+          >
+            <a
+              href="../arabic/admission-process-ar.html"
+              class="admission-pill-nav__btn"
+              >عملية القبول</a
+            >
+            <a
+              href="../arabic/admission-scholership-ar.html"
+              class="admission-pill-nav__btn"
+              >المنح الدراسية</a
+            >
+            <a href="../admission-tuition-fee.html" class="admission-pill-nav__btn">الرسوم الدراسية</a>
+            <a href="#" class="admission-pill-nav__btn"
+              >العمر المستحق + حاسبة العمر</a
+            >
+            <a
+              href="../arabic/admission-information-ar.html"
+              class="admission-pill-nav__btn admission-pill-nav__btn--active"
+              >معلومات العائلات الجديدة</a
+            >
+            <a href="#" class="admission-pill-nav__btn"
+              >إرشادات شهادة الانتقال</a
+            >
+            <a href="#" class="admission-pill-nav__btn">قدّم الآن</a>
+            <a href="#" class="admission-pill-nav__btn">احجز زيارة</a>
+          </nav>
+        </div>
+      </section>
+      <main class="admission-information-page">
+      <section
+        class="our-school-glance-main-container abt_welcome_video_section"
+      >
+        <div class="custom_container">
+          <div class="our-school-glance abt_welcome_video">
+            <h2 class="admission-info-welcome-heading">
+              <span class="admission-info-welcome-heading__intro"
+                >رسالة ترحيب من</span
+              >
+              <span class="admission-info-welcome-heading__name"
+                >السيد ستيفن جايلز</span
+              >
+            </h2>
+            <div class="our-school-glance__video-wrapper" id="osgWrapper">
+              <!-- Replace src with your actual video file -->
+              <video
+                class="our-school-glance__video"
+                id="osgVideo"
+                src="../assets/videos/hero-section/hero-section-video.mp4"
+                preload="metadata"
+                playsinline=""
+                poster="../assets/images/ABOUT-US/abt_welcome_video.png"
+              ></video>
+              <!-- Gradient overlay -->
+              <div class="our-school-glance__overlay"></div>
+              <!-- Heading text -->
+
+              <!-- Play button  –  uses play-button.svg you'll upload -->
+              <button
+                class="our-school-glance__play-btn"
+                id="osgPlayBtn"
+                aria-label="Play video"
+              >
+                <img
+                  src="../assets/images/hero-section/play-button.svg"
+                  alt="Play"
+                />
+              </button>
+              <!-- Invisible pause area (full card click while playing) -->
+              <div
+                class="our-school-glance__pause-area"
+                id="osgPauseArea"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="admission-hero__leaf-divider">
+        <img
+          src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+          alt="Colorful Leaves"
+        />
+      </div>
+      <section class="admission-supportive-team">
+        <div class="admission-supportive-team__inner">
+          <h2 class="admission-supportive-team__heading">
+            <span class="admission-supportive-team__heading-main"
+              >فريقنا الداعم</span
+            >
+            <span class="admission-supportive-team__heading-accent"
+              >فريقنا</span
+            >
+          </h2>
+          <p class="admission-supportive-team__description">
+            موظفونا مجتمع دولي حقيقي من القادة الكبار، القادة المتوسطين،
+            المعلمين، المستشارين، معلمي التربية البدنية، الأمناء، المتخصصين في
+            اللغات والإداريين.
+          </p>
+          <a href="#" class="admission-supportive-team__button cta-button-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80" fill="none">
+              <path class="button-path-bg"
+                d="M49.1556 16.0378C35.5696 19.3594 12.4824 26.5882 5.06401 39.2551C0.285518 47.4124 2.28556 55.9385 10.5072 60.6694C18.966 65.5421 33.7178 65.77 43.4448 66.1332C74.0211 67.2683 105.671 65.0179 135.774 59.6362C148.211 57.4119 174.55 52.9632 180.398 40.3249C186.245 27.6866 165.067 22.925 156.926 21.1559C121.786 13.5011 84.0925 7.50403 49.1556 16.0378Z"
+                fill="#BB133E" transform="translate(97.5 36.5) scale(1.06) translate(-97.5 -36.5) translate(6 0)" />
+              <path class="cta-outline"
+                d="M68.5,27.8c54.7-12.7,111.7-15.3,167.3-7.5,24.1,3.4,48.6,5.8,72.2,11.8s38,9.3,53.3,20.6c4.1,3,7.9,6.6,9.9,11.2,4.1,9.4-.4,20.7-8,27.6-12.1,11-29.2,14.4-44.8,17.2-58.9,10.5-119.9,10.9-179.5,8.5-34.5-1.3-69.4-3.2-102.1-15.3-16.8-6.2-34.4-16.6-29-37.6,4.3-16.4,19.8-29.9,34.2-37.7,23.5-12.7,50.7-16.8,77-19,28.6-2.4,57.8-2.4,86.4-.5,46.5,2.9,92.6,11.1,137.2,24.4"
+                transform="matrix(0.514 0 0 0.514 9.8 -1.2)" />
+            </svg>
+            <div class="cta-button-text">عرض الفريق</div>
+          </a>
+
+          <div class="admission-supportive-team__grid">
+            <article class="admission-supportive-team__card">
+              <img
+                src="../assets/images/admisson-information/team-1.png"
+                alt="Inas Al Derbashi"
+                class="admission-supportive-team__photo"
+              />
+              <h3 class="admission-supportive-team__name">إيناس الدريسي</h3>
+              <p class="admission-supportive-team__role">
+                رئيس المرحلة الثانوية
+              </p>
+            </article>
+
+            <article class="admission-supportive-team__card">
+              <img
+                src="../assets/images/admisson-information/team-2.png"
+                alt="Steven Giles"
+                class="admission-supportive-team__photo"
+              />
+              <h3 class="admission-supportive-team__name">ستيفن جايلز</h3>
+              <p class="admission-supportive-team__role">مدير المدرسة</p>
+            </article>
+
+            <article class="admission-supportive-team__card">
+              <img
+                src="../assets/images/admisson-information/team-3.png"
+                alt="Tim Wade"
+                class="admission-supportive-team__photo"
+              />
+              <h3 class="admission-supportive-team__name">تيم ويد</h3>
+              <p class="admission-supportive-team__role">
+                رئيس المرحلة الابتدائية
+              </p>
+            </article>
+
+            <article class="admission-supportive-team__card">
+              <img
+                src="../assets/images/admisson-information/team-4.png"
+                alt="Sarah Khokhar Fraser"
+                class="admission-supportive-team__photo"
+              />
+              <h3 class="admission-supportive-team__name">سارة خوخر فريزر</h3>
+              <p class="admission-supportive-team__role">
+                رئيس مرحلة رياض الأطفال
+              </p>
+            </article>
+
+            <article class="admission-supportive-team__card">
+              <img
+                src="../assets/images/admisson-information/team-5.png"
+                alt="Sheugnet Carter"
+                class="admission-supportive-team__photo"
+              />
+              <h3 class="admission-supportive-team__name">شوجنت كارتر</h3>
+              <p class="admission-supportive-team__role">
+                نائب رئيس المرحلة الثانوية / منسق برنامج الدبلومة
+              </p>
+            </article>
+          </div>
+
+          <div class="admission-supportive-team__mobile-arrows">
+            <button
+              class="admission-supportive-team__mobile-arrow admission-supportive-team__mobile-arrow--prev"
+              type="button"
+              aria-label="Previous team member"
+            >
+              <img
+                src="../assets/images/admisson-information/left-arrow.svg"
+                alt=""
+              />
+            </button>
+            <button
+              class="admission-supportive-team__mobile-arrow admission-supportive-team__mobile-arrow--next"
+              type="button"
+              aria-label="Next team member"
+            >
+              <img
+                src="../assets/images/admisson-information/right-arrow.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+      <div class="admission-hero__leaf-divider">
+        <img
+          src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+          alt="Colorful Leaves"
+        />
+      </div>
+
+      <section class="admission-school-timings admission-information-school-timings">
+        <div class="admission-school-timings__inner">
+          <h2 class="admission-school-timings__heading">
+            <span class="admission-school-timings__heading-main">مواعيد المدرسة و</span>
+            <span class="admission-school-timings__heading-accent">التقويم الأكاديمي</span>
+          </h2>
+          <p class="admission-school-timings__subtext">
+            تبدأ أيام المدرسة من الإثنين إلى الجمعة. ساعات العمل من 8 صباحًا حتى
+            4 مساءً (من الإثنين إلى الخميس) ومن 8 صباحًا حتى 12 ظهرًا (الجمعة)،
+            بما في ذلك خلال العطلات.
+          </p>
+
+          <div class="admission-school-timings__table-wrap">
+            <table
+              class="admission-school-timings__table"
+              aria-label="School timings and academic calendar"
+            >
+              <thead>
+                <tr>
+                  <th scope="col" class="admission-school-timings__col--grade">
+                    الصف
+                  </th>
+                  <th scope="col">الاثنين</th>
+                  <th scope="col">الثلاثاء</th>
+                  <th scope="col">الأربعاء</th>
+                  <th scope="col">الخميس</th>
+                  <th scope="col">الجمعة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="admission-school-timings__grade">
+                    مرحلة ما قبل الروضة - KG1
+                  </td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                </tr>
+                <tr>
+                  <td class="admission-school-timings__grade">KG2 - الصف 10</td>
+                  <td class="admission-school-timings__slot-main" colspan="4">
+                    08:15 - 14:10
+                  </td>
+                  <td class="admission-school-timings__slot-friday">
+                    07:45 - 12:00
+                  </td>
+                </tr>
+                <tr>
+                  <td class="admission-school-timings__grade">
+                    الصف 11 - الصف 12
+                  </td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                  <td class="admission-school-timings__slot-empty"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="admission-school-timings__table-slider"
+            aria-hidden="true"
+          >
+            <input
+              class="admission-school-timings__table-slider-input"
+              type="range"
+              min="0"
+              max="1000"
+              value="0"
+              step="1"
+              aria-label="Scroll school timings table"
+            />
+          </div>
+
+          <div class="admission-school-timings__toolbar">
+            <div class="admission-school-timings__left">
+              <div class="admission-school-timings__date-controls">
+                <span class="admission-school-timings__month">NOV, 2025</span>
+
+                <div class="admission-school-timings__month-toggle-wrap">
+                  <button
+                    class="admission-school-timings__month-toggle"
+                    type="button"
+                    aria-label="Open month selector"
+                  >
+                    <img
+                      class="admission-school-timings__month-toggle-icon"
+                      src="../assets/images/admission-process/drop-down-button.svg"
+                      alt=""
+                      data-closed-src="../assets/images/admission-process/drop-down-button.svg"
+                      data-open-src="../assets/images/admisson-information/drop-down-close.svg"
+                    />
+                  </button>
+
+                  <div
+                    class="admission-school-timings__year-dropdown"
+                    aria-hidden="true"
+                  >
+                    <div class="admission-school-timings__year-grid-wrap">
+                      <div class="admission-school-timings__year-grid">
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2026
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2025
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2024
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2023
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2022
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2019
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2018
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2017
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2016
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2015
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2014
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2013
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2012
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2011
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2010
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2009
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2008
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2007
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2006
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2005
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2004
+                        </button>
+                        <button
+                          class="admission-school-timings__year-option"
+                          type="button"
+                        >
+                          2003
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="admission-school-timings__arrows"
+                  aria-hidden="true"
+                >
+                  <button
+                    class="admission-school-timings__arrow-btn"
+                    type="button"
+                  >
+                    <img
+                      src="../assets/images/admisson-information/right-arrow.svg"
+                      alt="Previous month"
+                    />
+                  </button>
+                  <button
+                    class="admission-school-timings__arrow-btn"
+                    type="button"
+                  >
+                    <img
+                      src="../assets/images/admisson-information/left-arrow.svg"
+                      alt="Next month"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <ul
+                class="admission-school-timings__legend"
+                aria-label="مفتاح التقويم"
+              >
+                <li class="admission-school-timings__legend-item">
+                  <span
+                    class="admission-school-timings__legend-dot admission-school-timings__legend-dot--general"
+                  ></span>
+                  <span>الأحداث العامة</span>
+                </li>
+                <li class="admission-school-timings__legend-item">
+                  <span
+                    class="admission-school-timings__legend-dot admission-school-timings__legend-dot--holiday"
+                  ></span>
+                  <span>العطلات</span>
+                </li>
+                <li class="admission-school-timings__legend-item">
+                  <span
+                    class="admission-school-timings__legend-dot admission-school-timings__legend-dot--pd"
+                  ></span>
+                  <span>يوم التطوير المهني</span>
+                </li>
+                <li class="admission-school-timings__legend-item">
+                  <span
+                    class="admission-school-timings__legend-dot admission-school-timings__legend-dot--resume"
+                  ></span>
+                  <span>استئناف الدروس</span>
+                </li>
+                <li class="admission-school-timings__legend-item">
+                  <span
+                    class="admission-school-timings__legend-dot admission-school-timings__legend-dot--break"
+                  ></span>
+                  <span>إجازة المدرسة</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="admission-school-timings__right">
+              <a href="../assets/pdfs/Academic_Calendar_2025_26.pdf" class="admission-school-timings__download-btn" download>
+                <span>تحميل التقويم الأكاديمي 2025/26</span>
+                <img
+                  src="../assets/images/admisson-information/download-btn.svg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="admission-calendar">
+            <table
+              class="admission-calendar__table"
+              aria-label="تقويم شهر نوفمبر 2025"
+            >
+              <thead>
+                <tr>
+                  <th scope="col">الأحد</th>
+                  <th scope="col">الاثنين</th>
+                  <th scope="col">الثلاثاء</th>
+                  <th scope="col">الأربعاء</th>
+                  <th scope="col">الخميس</th>
+                  <th scope="col">الجمعة</th>
+                  <th scope="col">السبت</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td>
+                    <span class="admission-calendar__day-number">1</span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--holiday"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="عيد ميلاد النبي محمد (صلى الله عليه وسلم)"
+                        >عيد ميلاد النبي محمد (صلى الله عليه وسلم)</span
+                      >
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="admission-calendar__day-number">2</span></td>
+                  <td><span class="admission-calendar__day-number">3</span></td>
+                  <td><span class="admission-calendar__day-number">4</span></td>
+                  <td>
+                    <span class="admission-calendar__day-number">5</span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--general"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="جلسة معلومات لأولياء الأمور"
+                        >جلسة معلومات لأولياء الأمور</span
+                      >
+                    </span>
+                  </td>
+                  <td><span class="admission-calendar__day-number">6</span></td>
+                  <td><span class="admission-calendar__day-number">7</span></td>
+                  <td><span class="admission-calendar__day-number">8</span></td>
+                </tr>
+                <tr>
+                  <td><span class="admission-calendar__day-number">9</span></td>
+                  <td>
+                    <span class="admission-calendar__day-number">10</span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--pd"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="يوم التطوير المهني"
+                        >يوم التطوير المهني</span
+                      >
+                    </span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">11</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">12</span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--resume"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="استئناف الدراسة"
+                        >استئناف الدراسة</span
+                      >
+                    </span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">13</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">14</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">15</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="admission-calendar__day-number">16</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">17</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">18</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">19</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">20</span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--break"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="بداية إجازة منتصف الفصل"
+                        >بداية إجازة منتصف الفصل</span
+                      >
+                    </span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">21</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">22</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="admission-calendar__day-number">23</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">24</span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--general"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="يوم رياضي"
+                        >يوم رياضي</span
+                      >
+                    </span>
+                    <span
+                      class="admission-calendar__event admission-calendar__event--holiday"
+                    >
+                      <span
+                        class="admission-calendar__event-text"
+                        title="اليوم الوطني"
+                        >اليوم الوطني</span
+                      >
+                    </span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">25</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">26</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">27</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">28</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">29</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="admission-calendar__day-number">30</span>
+                  </td>
+                  <td>
+                    <span class="admission-calendar__day-number">31</span>
+                  </td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                  <td class="admission-calendar__cell--empty"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div class="admission-hero__leaf-divider">
+        <img
+          src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+          alt="Colorful Leaves"
+        />
+      </div>
+
+      <section class="yearly_term_section">
+        <div class="term_section_wrap">
+          <h3 class="term_section_hd">2025، الفصل الأول</h3>
+          <div class="term_data_wrap">
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">25 أغسطس 2025</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">25 أغسطس 2025</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+          </div>
+        </div>
+        <div class="term_section_wrap">
+          <h3 class="term_section_hd">2025، الفصل الثاني</h3>
+          <div class="term_data_wrap">
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">25 أغسطس 2025</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">25 أغسطس 2025</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+          </div>
+        </div>
+        <div class="term_section_wrap">
+          <h3 class="term_section_hd">2025، الفصل الثالث</h3>
+          <div class="term_data_wrap">
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">25 أغسطس 2025</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">25 أغسطس 2025</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+            <div class="term_data_row">
+              <span class="term_data_row_txt">جلسات توجيه الطلاب الجدد</span>
+              <button class="term_data_row_btn" type="button">26 أغسطس 2025 (الثلاثاء)</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      </main>
+
+      <!-- ════════
+    FOOTER 
+  ════════ -->
+
+      <footer class="footer">
+        <div class="footer__top-artwork">
+          <img
+            src="../assets/images/footer/artwork-top.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="footer__main-content">
+          <div class="footer__main">
+            <!-- Brand column -->
+            <div class="footer__brand">
+              <a
+                href="/"
+                class="footer__brand-logo"
+                aria-label="Dar Al Marefa home"
+              >
+                <img
+                  src="../assets/images/footer/footer-logo.png"
+                  alt="Dar Al Marefa — دار المعرفة"
+                />
+              </a>
+              <p
+                class="footer__brand-tagline"
+                data-en="Empowering curious learners through bilingual<br /> (Arabic &amp; English), inquiry-driven education."
+                data-ar="نُمكّن المتعلمين الفضوليين من خلال تعليم ثنائي اللغة<br /> (العربية والإنجليزية) قائم على الاستقصاء."
+              >
+                Empowering curious learners through bilingual<br />
+                (Arabic &amp; English), inquiry-driven education.
+              </p>
+              <div class="footer__social-icons">
+                <a href="#" class="footer__social-link" aria-label="Facebook">
+                  <img
+                    src="../assets/images/footer/facebook.svg"
+                    alt="Facebook"
+                  />
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Instagram">
+                  <img
+                    src="../assets/images/footer/instagram.svg"
+                    alt="Instagram"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link"
+                  aria-label="X / Twitter"
+                >
+                  <img src="../assets/images/footer/x.svg" alt="X" />
+                </a>
+                <a href="#" class="footer__social-link" aria-label="YouTube">
+                  <img
+                    src="../assets/images/footer/youtube.svg"
+                    alt="YouTube"
+                  />
+                </a>
+                <a href="#" class="footer__social-link" aria-label="WhatsApp">
+                  <img
+                    src="../assets/images/footer/whatsapp.svg"
+                    alt="WhatsApp"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <nav class="footer__quick-links" aria-label="Quick links">
+              <h5
+                class="footer__nav-title"
+                data-en="Quick Links"
+                data-ar="روابط سريعة"
+              >
+                Quick Links
+              </h5>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" data-en="Contact Us" data-ar="تواصل معنا"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-en="Career" data-ar="الوظائف">Career</a>
+                </li>
+                <li>
+                  <a href="#" data-en="Payment Terms" data-ar="شروط الدفع"
+                    >Payment Terms</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-en="Terms and conditions"
+                    data-ar="الشروط والأحكام"
+                    >Terms and conditions</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Parents Portal -->
+            <nav class="footer__parents-portal" aria-label="Parents portal">
+              <h5
+                class="footer__nav-title"
+                data-en="Parents Portal"
+                data-ar="بوابة أولياء الأمور"
+              >
+                Parents Portal
+              </h5>
+              <ul class="footer__nav-list">
+                <li>
+                  <a href="#" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+                </li>
+                <li>
+                  <a href="#" data-en="Student Login" data-ar="إنشاء حساب"
+                    >Student Login</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-en="Parent Login ManageBac"
+                    data-ar="دخول الطلبة"
+                    >Parent Login ManageBac</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-en="Parent Login SchoolsBuddy"
+                    data-ar="دخول ولي الأمر ManageBac"
+                    >Parent Login SchoolsBuddy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-en="Teacher Login"
+                    data-ar="دخول ولي الأمر SchoolsBuddy"
+                    >Teacher Login</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Address -->
+            <address class="footer__address" style="font-style: normal">
+              <h5 class="footer__nav-title" data-en="Address" data-ar="العنوان">
+                Address
+              </h5>
+              <p
+                class="footer__address-text"
+                data-en="47th St - Al Khawaneej -<br /> Al Khawaneej 1 - Dubai -<br /> United Arab Emirates."
+                data-ar="شارع 47 - الخوانيج -<br /> الخوانيج 1 - دبي -<br /> الإمارات العربية المتحدة."
+              >
+                47th St - Al Khawaneej -<br />
+                Al Khawaneej 1 - Dubai -<br />
+                United Arab Emirates.
+              </p>
+            </address>
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="footer__bottom">
+            <p
+              class="footer__copyright"
+              data-en="&copy; 2026 Dar Al Marefa. All rights reserved."
+              data-ar="&copy; 2026 دار المعرفة. جميع الحقوق محفوظة."
+            >
+              &copy; 2026 Dar Al Marefa. All rights reserved.
+            </p>
+            <a href="#" class="footer__secondary-logo" aria-label="Al Ghurair">
+              <img
+                src="../assets/images/footer/AlGhurair-logo.png"
+                alt="Al Ghurair logo"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__bottom-artwork" aria-hidden="true">
+          <img src="../assets/images/footer/artwork-bottom.png" alt="" />
+        </div>
+      </footer>
+    </div>
+    <!-- Attached JavaScript Files -->
+    <script src="../js/vendor/jquery_v3.7.1.min.js"></script>
+    <script src="../js/vendor/gsap.min.js"></script>
+    <script src="../js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="../js/vendor/ScrollTrigger.min.js"></script>
+    <script src="../js/home-page-carousel.js"></script>
+    <script src="../js/homepage/our-school-at-glance.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

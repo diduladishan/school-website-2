@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Dar Al Marefa School Website</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles-ar.css" />
+    <link rel="stylesheet" href="../css/intlTelInput.css">
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <div class="arabic-page">
+      <!-- Header and Hero Section -->
+      <section class="admission-hero">
+        <div class="admission-hero__tree-bg" aria-hidden="true"></div>
+
+        <div class="admission-hero__content">
+          <h1 class="admission-hero__title">
+            <span class="admission-hero__title-main">خريطة الحرم الجامعي  </span
+            ><span class="admission-hero__title-accent">التفاعلية</span>
+          </h1>
+          <p>
+             الحرم الجامعي والمرافق  
+            <span class="admission-hero__breadcrumb-separator"
+              ><img
+                src="../assets/images/admission-process/right-arrow.svg"
+                alt="سهم المسار" /></span
+            > خريطة الحرم الجامعي التفاعلية
+          </p>
+        </div>
+
+        <div class="admission-hero__leaf-divider">
+          <img
+            src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+            alt="Colorful Leaves"
+          />
+        </div>
+
+        <!-- Horizontally scrollable pill navigation -->
+        <div class="admission-pill-nav-wrap">
+          <nav
+            class="admission-pill-nav"
+            role="tablist"
+            aria-label="أقسام القبول"
+          >
+            <a
+              href="../arabic/admission-process-ar.html"
+              class="admission-pill-nav__btn"
+              >نظرة عامة على الحرم الجامعي</a
+            >
+            <a
+              href="../arabic/admission-scholership-ar.html"
+              class="admission-pill-nav__btn
+              admission-pill-nav__btn--active"
+              >خريطة الحرم الجامعي التفاعلية</a
+            >
+            <a href="../admission-tuition-fee.html" class="admission-pill-nav__btn">المرافق الأكاديمية</a>
+
+            <a href="#" class="admission-pill-nav__btn"
+              > مرافق الكافيتيريا</a
+            >
+            <a href="../arabic/admission-information-ar.html" class="admission-pill-nav__btn"
+              >مرافق حافلات المدرسة </a
+            >
+            <a href="../arabic/admission-transfer-certificate-ar.html" class="admission-pill-nav__btn">جولة افتراضية في الحرم الجامعي</a>
+           
+          </nav>
+        </div>
+      </section>
+
+
+        <!-- ============================================================
+     INTERACTIVE CAMPUS MAP SECTION
+     ============================================================ -->
+<section class="interactive-c-map__section" aria-label="Interactive Campus Map">
+
+
+
+  <!-- MAP CARD -->
+  <div class="interactive-c-map__card">
+
+    <!-- overlay badge -->
+    <div class="interactive-c-map__overlay-badge" aria-hidden="true">
+      <p>School Location</p>
+      <span>Dar Al Marefa</span>
+    </div>
+
+    <!-- Leaflet map target -->
+    <div id="interactive-c-map__leaflet" role="application" aria-label="Campus map showing Dar Al Marefa location"></div>
+
+  </div>
+
+</section>
+
+    </div>
+
+
+    <section class="footer-container">
+
+<footer class="footer">
+
+    <div class="footer__top-artwork">
+      <img src="../assets/images/footer/artwork-top.png" alt="" aria-hidden="true" />
+    </div>
+
+    <div class="footer__top-artwork-mobile">
+      <img src="../assets/images/footer/artwork-top-mobile.png" alt="" aria-hidden="true" />
+    </div>
+
+    <div class="footer__main-content">
+      <div class="footer__main">
+
+        <!-- Nav columns (left side in RTL = rendered first in grid) -->
+        <div class="footer-right-side">
+
+          <!-- Quick Links / روابط سريعة -->
+          <nav class="footer__quick-links" aria-label="روابط سريعة">
+            <h5 class="footer__nav-title">
+  روابط <br class="footer__br" /> سريعة
+</h5>
+            <ul class="footer__nav-list">
+              <li><a href="#">تواصل معنا</a></li>
+              <li><a href="#">الوظائف</a></li>
+              <li><a href="#">شروط الدفع</a></li>
+              <li><a href="#">سياسة الخصوصية</a></li>
+              <li><a href="#">الشروط والأحكام</a></li>
+            </ul>
+          </nav>
+
+          <!-- Parents Portal / بوابة أولياء الأمور -->
+          <nav class="footer__parents-portal" aria-label="بوابة أولياء الأمور">
+            <h5 class="footer__nav-title">بوابة أولياء الأمور</h5>
+            <ul class="footer__nav-list">
+              <li><a href="#">تسجيل الدخول</a></li>
+              <li><a href="#">إنشاء حساب</a></li>
+              <li><a href="#">دخول الطلبة</a></li>
+              <li><a href="#">دخول ولي الأمر ManageBac</a></li>
+              <li><a href="#">دخول ولي الأمر SchoolsBuddy</a></li>
+              <li><a href="#">دخول المعلمين</a></li>
+            </ul>
+          </nav>
+
+          <!-- Address / العنوان -->
+          <address class="footer__address">
+            <h5 class="footer__nav-title footer-address-ar">العنوان</h5>
+            <p class="footer__address-text">
+              شارع 47 - الخوانيج -<br />
+              الخوانيج 1 - دبي - الإمارات<br />
+              العربية المتحدة.
+            </p>
+          </address>
+
+        </div>
+
+        <!-- Brand column (right side in RTL) -->
+        <div class="footer__brand">
+          <a href="/" class="footer__brand-logo" aria-label="دار المعرفة">
+            <img src="../assets/images/footer/footer-logo.png" alt="دار المعرفة — Dar Al Marefa" />
+          </a>
+          <p class="footer__brand-tagline">
+                   نُمكّن المتعلمين الفضوليين من خلال تعليم ثنائي اللغة <br />
+         (العربية والإنجليزية) قائم على الاستقصاء.
+          </p>
+
+          <div class="footer__social-icons">
+             <a href="#" class="footer__social-link" aria-label="WhatsApp">
+              <img src="../assets/images/footer/whatsapp.svg" alt="WhatsApp" />
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <img src="../assets/images/footer/youtube.svg" alt="YouTube" />
+            </a>
+            <a href="#" class="footer__social-link" aria-label="X / Twitter">
+              <img src="../assets/images/footer/x.svg" alt="X" />
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <img src="../assets/images/footer/instagram.svg" alt="Instagram" />
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <img src="../assets/images/footer/facebook.svg" alt="Facebook" />
+            </a>
+          </div>
+
+        
+
+        </div>
+
+          
+
+      </div>
+
+      <!-- Bottom bar aligned under brand column -->
+          <div class="footer__bottom">
+            
+             <a href="#" class="footer__secondary-logo" aria-label="Al Ghurair">
+          <img src="../assets/images/footer/AlGhurair-logo.png" alt="Al Ghurair logo" />
+        </a>
+
+        <p class="footer__copyright">© 2026 دار المعرفة. جميع الحقوق محفوظة.</p>
+          </div>
+
+      <!-- Al Ghurair logo centered -->
+      <!-- <div class="footer__bottom-center">
+        <a href="#" class="footer__secondary-logo" aria-label="Al Ghurair">
+          <img src="../assets/images/footer/AlGhurair-logo.png" alt="Al Ghurair logo" />
+        </a>
+      </div> -->
+
+    </div>
+
+    <div class="footer__bottom-artwork" aria-hidden="true">
+      <img src="../assets/images/footer/artwork-bottom.png" alt="" />
+    </div>
+
+</footer>
+
+</section>
+
+    <!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* ============================================================
+   CONFIGURATION — edit these to update the map easily
+   ============================================================ */
+const INTERACTIVE_C_MAP_CONFIG = {
+  /* ---- school coordinates ---- */
+  schoolLat:  25.2285,
+  schoolLng:  55.4550,
+  initialZoom: 17,
+
+  /* ---- popup content ---- */
+  popupTitle:   "Dar Al Marefa School",
+  popupAddress: "47th St – Al Khawaneej – Al Khawaneej 1 – Dubai – United Arab Emirates",
+
+  /* ---- nearby landmark labels (lat, lng, label, isPK) ---- */
+  landmarks: [
+    { lat: 25.2291, lng: 55.4524, label: "Dakakeen",  isPK: false },
+    { lat: 25.2298, lng: 55.4558, label: "PK 11393",  isPK: true  },
+    { lat: 25.2275, lng: 55.4512, label: "PK 9490",   isPK: true  },
+  ]
+};
+
+/* ============================================================
+   MAP INITIALISATION
+   ============================================================ */
+(function interactive_c_map_init() {
+
+  const cfg = INTERACTIVE_C_MAP_CONFIG;
+
+  /* ----- create map ----- */
+  const map = L.map('interactive-c-map__leaflet', {
+    center:    [cfg.schoolLat, cfg.schoolLng],
+    zoom:      cfg.initialZoom,
+    zoomControl: true,
+    scrollWheelZoom: true,
+    attributionControl: true,
+  });
+
+  /* ----- tile layer (OpenStreetMap — swap URL for Google Maps) ----- */
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 20,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    /* ---- TO SWAP TO GOOGLE MAPS ----
+       Replace the URL above with:
+       'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}'
+       and add: { apiKey: 'YOUR_GOOGLE_MAPS_API_KEY' }
+    */
+  }).addTo(map);
+
+  /* ----- custom pulsing marker icon ----- */
+  const schoolIcon = L.divIcon({
+    className: '',
+    html: '<div class="interactive-c-map__marker-dot" aria-label="Dar Al Marefa"></div>',
+    iconSize:   [20, 20],
+    iconAnchor: [10, 10],
+    popupAnchor:[0, -14],
+  });
+
+  /* ----- school marker + popup ----- */
+  const popup = L.popup({ className: 'interactive-c-map__popup', maxWidth: 260 })
+    .setContent(
+      `<div class="interactive-c-map__popup-title">${cfg.popupTitle}</div>` +
+      `<div class="interactive-c-map__popup-address">${cfg.popupAddress}</div>`
+    );
+
+  L.marker([cfg.schoolLat, cfg.schoolLng], { icon: schoolIcon })
+    .addTo(map)
+    .bindPopup(popup);
+
+  /* ----- landmark / PK label markers ----- */
+  cfg.landmarks.forEach(function(lm) {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="interactive-c-map__landmark ${lm.isPK ? 'interactive-c-map__landmark--pk' : ''}">${lm.label}</div>`,
+      iconAnchor: [0, 0],
+    });
+    L.marker([lm.lat, lm.lng], { icon: icon, interactive: false }).addTo(map);
+  });
+
+  /* ----- invalidate size after CSS animation finishes ----- */
+  setTimeout(function() { map.invalidateSize(); }, 750);
+
+})();
+
+/* ============================================================
+   TAB SWITCHER (visual only — wire up real navigation as needed)
+   ============================================================ */
+function interactive_c_map_switchTab(btn) {
+  document.querySelectorAll('.interactive-c-map__tab').forEach(function(t) {
+    t.classList.remove('interactive-c-map__tab--active');
+  });
+  btn.classList.add('interactive-c-map__tab--active');
+}
+</script>
+
+
+
+       <!-- Attached JavaScript Files -->
+    <script src="../js/vendor/jquery_v3.7.1.min.js"></script>
+    <script src="../js/vendor/slick.min.js"></script>
+    <script src="../js/vendor/slick-animation.js"></script>
+    <script src="../js/vendor/gsap.min.js"></script>
+    <script src="../js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="../js/vendor/ScrollTrigger.min.js"></script>
+    <script src="../js/homepage/hero-scroll-to-ib-section.js"></script>
+   <!-- <script src="./js/homepage/campus-reveal.js"></script> -->
+    <script src="../js/homepage/ib-bilingual-school.js"></script>
+    <script src="../js/homepage/our-curriculum.js"></script>
+    <script src="../js/homepage/social-wall-slider.js"></script>
+    <script src="../js/homepage/our-school-at-glance.js"></script>
+    <script src="../js/home-page-carousel.js"></script>
+    <script src="../js/vendor/intlTelInput.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

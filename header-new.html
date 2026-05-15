@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dar Al Marefa – Mobile Nav</title>
+
+      <title>Dar Al Marefa School Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick-theme.css" />
+    <link rel="stylesheet" href="css/intlTelInput.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s3.eu-west-1.amazonaws.com/www.daralmarefa.ae/favicon.ico"
+    />
+</head>
+<body>
+
+
+
+<div class="new-header-re">
+
+    <div class="header-english">
+    <div class="marefa-menu-topbar-red">
+              <!-- Logo -->
+
+              <div class="header-logo-containers">
+                <img src="./assets/images/menu/marefa-logo-white-HQ.svg" alt="Dar Al Marefa" class="marefa-menu-logo">
+                <div class="hero__logo-divider"></div>
+                <img class="hero__logo-colegio-del-mundo" src="./assets/images/ABOUT-US/colegio-del-mundo-svg.svg" alt="Colegio del Mundo IB">
+                <!-- <img src="./assets/images/MENU-1/colegio-del-mundo.png" alt="Dar Al Marefa" class="colegio-del-mundo" /> -->
+              </div>
+
+              <!-- Right side of top bar -->
+              <div class="marefa-menu-topbar-right">
+                <!-- Desktop only: ENQUIRE + CONTACT -->
+                <div class="marefa-menu-toplinks-red">
+                  <a href="#">ENQUIRE
+                    <img class="nav-hover-icon" src="./assets/images/hero-section/nav-hover-01.png" alt="leaf-hover">
+                  </a>
+                  <a href="#">CONTACT
+                    <img class="nav-hover-icon" src="./assets/images/hero-section/nav-hover-03.png" alt="leaf-hover">
+                  </a>
+                </div>
+
+                <!-- Search + Lang + Close -->
+                <div class="marefa-menu-topbar-actions">
+                  <div class="marefa-menu-search-n-a-text">
+                    <button class="marefa-menu-search-btn" aria-label="Search">
+                      <img src="./assets/images/menu/search-icon-white.svg" alt="Search">
+                    </button>
+
+                    <div class="marefa-menu-divider"></div>
+                    <a href="#" class="marefa-menu-lang-red">العربية</a>
+                  </div>
+
+                  <!-- Close button inside the red menu -->
+                  <!-- <button
+                    class="marefa-menu-close-btn"
+                    aria-label="Close menu"
+                    onclick="closeMarefaMenu()"
+                  >
+                    <img
+                      src="./assets/images/menu/menu-button-white-HQ.png"
+                      alt="Close"
+                    />
+                  </button> -->
+
+                  <div class="home-page-main-btn-container" aria-label="Close menu" onclick="closeMarefaMenu()">
+                    <div class="home-page-main-btn-circle-menu"></div>
+                    <img class="home-page-main-btn-img" src="./assets/images/menu/button-white-border-with-white-lines.svg" alt="Menu button">
+                  </div>
+                </div>
+              </div>
+            </div>
+  </div>
+
+  <!-- ---------------- -->
+
+  <div>
+      <div class="new-header-re-bg"></div>
+
+  <div class="new-header-re-inner">
+    <div class="new-header-re-body">
+
+      <!-- Primary navigation column -->
+      <nav class="new-header-re-nav-col" aria-label="Main navigation">
+        <ul class="new-header-re-nav-list">
+
+          <li>
+            <a href="#" class="new-header-re-nav-item">Home</a>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item new-header-re-active" data-sub="about">
+              About Us
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <!-- Mobile inline sub-list (hidden on desktop via JS; desktop uses .new-header-re-sub-col) -->
+            <ul class="new-header-re-mobile-sub new-header-re-mobile-open" id="mob-sub-about">
+              <li><a href="#" class="new-header-re-active">Principal's Welcome</a></li>
+              <li><a href="#">About Dar Al Marefa</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Student Stories</a></li>
+              <li><a href="#">News &amp; Events</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item" data-sub="admissions">
+              Admissions
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <ul class="new-header-re-mobile-sub" id="mob-sub-admissions">
+              <li><a href="#">How to Apply</a></li>
+              <li><a href="#">Enrolment Process</a></li>
+              <li><a href="#">Fees &amp; Scholarships</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item" data-sub="academics">
+              Academics
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <ul class="new-header-re-mobile-sub" id="mob-sub-academics">
+              <li><a href="#">Curriculum Overview</a></li>
+              <li><a href="#">Primary School</a></li>
+              <li><a href="#">Secondary School</a></li>
+              <li><a href="#">Assessment &amp; Reporting</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item" data-sub="beyond">
+              Beyond the Classroom
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <ul class="new-header-re-mobile-sub" id="mob-sub-beyond">
+              <li><a href="#">Sports &amp; Athletics</a></li>
+              <li><a href="#">Arts &amp; Culture</a></li>
+              <li><a href="#">Clubs &amp; Societies</a></li>
+              <li><a href="#">Field Trips</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item" data-sub="school">
+              School Life
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <ul class="new-header-re-mobile-sub" id="mob-sub-school">
+              <li><a href="#">Daily Schedule</a></li>
+              <li><a href="#">School Calendar</a></li>
+              <li><a href="#">Uniform &amp; Code of Conduct</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item" data-sub="campus">
+              Campus &amp; Facilities
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <ul class="new-header-re-mobile-sub" id="mob-sub-campus">
+              <li><a href="#">Our Campus</a></li>
+              <li><a href="#">Classrooms &amp; Labs</a></li>
+              <li><a href="#">Sports Facilities</a></li>
+              <li><a href="#">Library</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="new-header-re-nav-item" data-sub="community">
+              Community
+              <span class="new-header-re-arrow">
+                <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1l5 5-5 5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <ul class="new-header-re-mobile-sub" id="mob-sub-community">
+              <li><a href="#">Community Outreach</a></li>
+              <li><a href="#">Alumni</a></li>
+              <li><a href="#">Partnerships</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="new-header-re-nav-item">Parents Area</a></li>
+          <li><a href="#" class="new-header-re-nav-item">DMS Voice</a></li>
+          <li><a href="#" class="new-header-re-nav-item">Career</a></li>
+          <li><a href="#" class="new-header-re-nav-item">Contact</a></li>
+
+          <li>
+            <div class="new-bottom-menu-icons-ctr">
+              <a href="#"><img src="./assets/images/menu/contact-icon-white.svg" alt="Contact"/></a>
+              <a href="#"><img src="./assets/images/menu/location-icon-white.svg" alt="Location"/></a>
+              <a href="#"><img src="./assets/images/menu/phone-icon-white.svg" alt="Phone"/></a>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Desktop sub-navigation column (hidden on mobile via CSS) -->
+      <div class="new-header-re-sub-col">
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-about">
+          <li><a href="#" class="new-header-re-sub-item new-header-re-active">Principal's Welcome</a></li>
+          <li><a href="#" class="new-header-re-sub-item">About Dar Al Marefa</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Our Team</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Student Stories</a></li>
+          <li><a href="#" class="new-header-re-sub-item">News &amp; Events</a></li>
+        </ul>
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-admissions">
+          <li><a href="#" class="new-header-re-sub-item">How to Apply</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Enrolment Process</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Fees &amp; Scholarships</a></li>
+          <li><a href="#" class="new-header-re-sub-item">FAQs</a></li>
+        </ul>
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-academics">
+          <li><a href="#" class="new-header-re-sub-item">Curriculum Overview</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Primary School</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Secondary School</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Assessment &amp; Reporting</a></li>
+        </ul>
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-beyond">
+          <li><a href="#" class="new-header-re-sub-item">Sports &amp; Athletics</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Arts &amp; Culture</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Clubs &amp; Societies</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Field Trips</a></li>
+        </ul>
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-school">
+          <li><a href="#" class="new-header-re-sub-item">Daily Schedule</a></li>
+          <li><a href="#" class="new-header-re-sub-item">School Calendar</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Uniform &amp; Code of Conduct</a></li>
+        </ul>
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-campus">
+          <li><a href="#" class="new-header-re-sub-item">Our Campus</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Classrooms &amp; Labs</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Sports Facilities</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Library</a></li>
+        </ul>
+        <ul class="new-header-re-sub-list" id="new-header-re-sub-community">
+          <li><a href="#" class="new-header-re-sub-item">Community Outreach</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Alumni</a></li>
+          <li><a href="#" class="new-header-re-sub-item">Partnerships</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /.new-header-re-body -->
+
+    <!-- Footer contact bar -->
+    <div class="new-header-re-footer">
+      <div class="new-header-re-footer-col">
+        <span class="new-header-re-footer-label">For admissions and registration</span>
+        <span class="new-header-re-footer-value">contact@daralmarefa.com</span>
+      </div>
+      <div class="new-header-re-footer-col">
+        <span class="new-header-re-footer-label">To contact the Principal</span>
+        <span class="new-header-re-footer-value">principal@daralmarefa.ae</span>
+      </div>
+      <div class="new-header-re-footer-col">
+        <span class="new-header-re-footer-label">Marketing enquiries</span>
+        <span class="new-header-re-footer-value">marketing@daralmarefa.ae</span>
+      </div>
+      <div class="new-header-re-footer-col">
+        <span class="new-header-re-footer-label">For other enquiries</span>
+        <span class="new-header-re-footer-value">info@daralmarefa.ae</span>
+      </div>
+    </div>
+
+  </div><!-- /.new-header-re-inner -->
+  </div>
+
+</div><!-- /.new-header-re -->
+
+<script>
+(function () {
+  var isMobile = function () { return window.innerWidth <= 768; };
+
+  /* ── Desktop logic (your existing code, unchanged) ── */
+  var subMap = {
+    about: 'new-header-re-sub-about', admissions: 'new-header-re-sub-admissions',
+    academics: 'new-header-re-sub-academics', beyond: 'new-header-re-sub-beyond',
+    school: 'new-header-re-sub-school', campus: 'new-header-re-sub-campus',
+    community: 'new-header-re-sub-community'
+  };
+  var VISIBLE = 'new-header-re-sub-visible';
+  var ACTIVE  = 'new-header-re-active';
+
+  var navItems = document.querySelectorAll('.new-header-re .new-header-re-nav-item[data-sub]');
+  var allSubs  = document.querySelectorAll('.new-header-re .new-header-re-sub-list');
+  var subCol   = document.querySelector('.new-header-re .new-header-re-sub-col');
+
+  function hideAllDesktop() {
+    allSubs.forEach(function (el) { el.classList.remove(VISIBLE); });
+  }
+
+  function showSubDesktop(key, navItem) {
+    hideAllDesktop();
+    var target = document.getElementById(subMap[key]);
+    if (!target) return;
+    var navItemRect = navItem.getBoundingClientRect();
+    var subColRect  = subCol.getBoundingClientRect();
+    target.style.top = (navItemRect.top - subColRect.top) + 'px';
+    target.classList.add(VISIBLE);
+  }
+
+  /* ── Mobile accordion logic ── */
+  var mobSubMap = {
+    about: 'mob-sub-about', admissions: 'mob-sub-admissions',
+    academics: 'mob-sub-academics', beyond: 'mob-sub-beyond',
+    school: 'mob-sub-school', campus: 'mob-sub-campus',
+    community: 'mob-sub-community'
+  };
+
+  function openMobSub(el) {
+    el.classList.add('new-header-re-mobile-open');
+    /* Set max-height to scrollHeight so CSS transition works */
+    el.style.maxHeight = el.scrollHeight + 'px';
+  }
+
+  function closeMobSub(el) {
+    el.style.maxHeight = '0';
+    el.classList.remove('new-header-re-mobile-open');
+  }
+
+  function closeAllMobSubs() {
+    Object.values(mobSubMap).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) closeMobSub(el);
+    });
+  }
+
+  /* Attach unified click handler */
+  navItems.forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (isMobile()) {
+        /* Mobile: accordion */
+        var key = item.dataset.sub;
+        var mobSub = document.getElementById(mobSubMap[key]);
+        var isOpen = item.classList.contains(ACTIVE);
+
+        /* Close all others */
+        navItems.forEach(function (n) { n.classList.remove(ACTIVE); });
+        closeAllMobSubs();
+
+        if (!isOpen && mobSub) {
+          item.classList.add(ACTIVE);
+          openMobSub(mobSub);
+        }
+      } else {
+        /* Desktop: side panel (original behaviour) */
+        if (item.classList.contains(ACTIVE)) {
+          item.classList.remove(ACTIVE);
+          hideAllDesktop();
+          return;
+        }
+        navItems.forEach(function (n) { n.classList.remove(ACTIVE); });
+        item.classList.add(ACTIVE);
+        showSubDesktop(item.dataset.sub, item);
+      }
+    });
+  });
+
+  /* On load: if mobile, open the default active item */
+  if (isMobile()) {
+    var defaultActive = document.querySelector('.new-header-re-nav-item.new-header-re-active[data-sub]');
+    if (defaultActive) {
+      var mobSub = document.getElementById(mobSubMap[defaultActive.dataset.sub]);
+      if (mobSub) openMobSub(mobSub);
+    }
+  } else {
+    /* Desktop: show default active sub */
+    var defaultActive = document.querySelector('.new-header-re-nav-item.new-header-re-active[data-sub]');
+    if (defaultActive) showSubDesktop(defaultActive.dataset.sub, defaultActive);
+  }
+})();
+</script>
+
+</body>
+</html>

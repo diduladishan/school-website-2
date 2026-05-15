@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dar Al Marefa School Website</title>
+    <link rel="stylesheet" href="../css/about-us.css?v=3" />
+    <!-- <link rel="stylesheet" href="css/home.css?v=3"> -->
+    <link rel="stylesheet" href="../css/home.css?v=3" />
+    <link rel="stylesheet" href="../css/about-us.css?v=3" />
+    <link rel="stylesheet" href="../css/language-switch.css?v=3" />
+    <link rel="stylesheet" href="../css/admission.css?v=3" />
+    <link rel="stylesheet" href="../css/academics.css?v=3" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/campus-overview.css" />
+    <link rel="stylesheet" href="../css/campus-basit.css" />
+    <link rel="stylesheet" href="../css/campus-cafeteria.css" />
+    <link rel="stylesheet" href="../css/campus-basit-ar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles-ar.css">
+  </head>
+
+  <body>
+    <div class="arabic-page">
+      <!-- Header and Hero Section -->
+      <section class="admission-hero">
+        <div class="admission-hero__tree-bg" aria-hidden="true"></div>
+
+        <!-- Navbar -->
+        <nav class="hero__nav inner-page-nav">
+          <!-- Logos -->
+          <div class="hero__logos">
+            <img
+              class="hero__logo"
+              src="../assets/images/ABOUT-US/Marefa-logo.png"
+              alt="Dar Al Marefa"
+            />
+            <div class="hero__logo-divider"></div>
+            <img
+              class="hero__logo-colegio-del-mundo"
+              src="../assets/images/ABOUT-US/colegio-del-mundo-2.png"
+              alt="Colegio del Mundo IB"
+            />
+          </div>
+
+          <div class="hero__nav-spacer"></div>
+
+          <div class="nav-links-search-gap">
+            <!-- Nav links (desktop) -->
+            <ul class="hero__nav-links">
+              <li><a href="#">ENQUIRE</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+
+            <!-- Search -->
+            <div class="hero-divider-n-text">
+              <div class="hero__search-wrap">
+                <img
+                  src="../assets/images/ABOUT-US/search-icon.png"
+                  alt="Search Icon"
+                  class="hero-search-icon"
+                />
+              </div>
+
+              <!-- Divider + Arabic text -->
+              <div class="hero__nav-divider"></div>
+              <span class="hero__arabic">العربية</span>
+            </div>
+          </div>
+
+          <!-- Menu button -->
+          <div
+            class="marefa-menu-close-btn"
+            aria-label="Close menu"
+            onclick="
+              document
+                .getElementById('marefaMenu')
+                .classList.add('marefa-menu-open')
+            "
+          >
+            <img
+              src="../assets/images/COMMUNITY-OVERVIEW/menu-button.png"
+              alt="Close"
+            />
+          </div>
+        </nav>
+
+        <div class="admission-hero__content">
+          <h1 class="admission-hero__title">
+            <span class="admission-hero__title-main">جولة الحرم الجامعي </span>
+            <span class="admission-hero__title-accent">الافتراضي</span>
+          </h1>
+
+          <span
+            >الحرم الجامعي والمرافق
+            <span class="admission-hero__breadcrumb-separator">
+              <img
+                src="../assets/images/academics/arrow-right.png"
+                alt="Arrow Right"
+            /></span>
+            جولة الحرم الجامعي الافتراضي</span
+          >
+        </div>
+
+        <div class="admission-hero__leaf-divider">
+          <img
+            src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+            alt="Colorful Leaves"
+          />
+        </div>
+
+        <!-- Horizontally scrollable pill navigation -->
+        <div class="admission-pill-nav-wrap">
+          <nav
+            class="admission-pill-nav"
+            role="tablist"
+            aria-label="أقسام الحرم الجامعي"
+          >
+            <a
+              href="#"
+              class="admission-pill-nav__btn admission-pill-nav__btn--active"
+              >جولة افتراضية في الحرم الجامعي</a
+            >
+            <a href="#" class="admission-pill-nav__btn">مرافق حافلات المدرسة</a>
+            <a
+              href="../arabic/campus-cafeteria-ar.html"
+              class="admission-pill-nav__btn"
+              >مرافق الكافيتيريا</a
+            >
+            <a href="#" class="admission-pill-nav__btn">المرافق الأكاديمية</a>
+            <a href="#" class="admission-pill-nav__btn"
+              >خريطة الحرم الجامعي التفاعلية</a
+            >
+            <a
+              href="../arabic/campus-overview-ar.html"
+              class="admission-pill-nav__btn"
+              >نظرة عامة على الحرم الجامعي</a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <section
+        class="our-school-glance-main-container abt_welcome_video_section virtual-tour-video"
+      >
+        <div class="custom_container">
+          <div class="our-school-glance abt_welcome_video">
+            <div class="our-school-glance__video-wrapper" id="osgWrapper">
+              <!-- Replace src with your actual video file -->
+              <video
+                class="our-school-glance__video"
+                id="osgVideo"
+                src="../assets/videos/hero-section/hero-section-video.mp4"
+                preload="metadata"
+                playsinline=""
+                poster="../assets/images/ABOUT-US/abt_welcome_video.png"
+              ></video>
+              <!-- Gradient overlay -->
+              <div class="our-school-glance__overlay"></div>
+              <!-- Heading text -->
+
+              <!-- Play button  –  uses play-button.svg you'll upload -->
+              <button
+                class="our-school-glance__play-btn"
+                id="osgPlayBtn"
+                aria-label="Play video"
+              >
+                <img
+                  src="../assets/images/hero-section/play-button.svg"
+                  alt="Play"
+                />
+              </button>
+              <!-- Invisible pause area (full card click while playing) -->
+              <div
+                class="our-school-glance__pause-area"
+                id="osgPauseArea"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════
+    FOOTER
+  ════════ -->
+
+      <footer class="footer">
+        <div class="footer__top-artwork">
+          <img
+            src="../assets/images/footer/artwork-top.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="footer__main-content">
+          <div class="footer__main">
+            <!-- Brand column -->
+            <div class="footer__brand">
+              <a
+                href="/"
+                class="footer__brand-logo"
+                aria-label="Dar Al Marefa home"
+              >
+                <img
+                  src="../assets/images/footer/footer-logo.png"
+                  alt="Dar Al Marefa — دار المعرفة"
+                />
+              </a>
+              <p class="footer__brand-tagline">
+                Empowering curious learners through bilingual<br />
+                (Arabic &amp; English), inquiry-driven education.
+              </p>
+              <div class="footer__social-icons">
+                <a href="#" class="footer__social-link" aria-label="Facebook">
+                  <img
+                    src="../assets/images/footer/facebook.svg"
+                    alt="Facebook"
+                  />
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Instagram">
+                  <img
+                    src="../assets/images/footer/instagram.svg"
+                    alt="Instagram"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link"
+                  aria-label="X / Twitter"
+                >
+                  <img src="../assets/images/footer/x.svg" alt="X" />
+                </a>
+                <a href="#" class="footer__social-link" aria-label="YouTube">
+                  <img
+                    src="../assets/images/footer/youtube.svg"
+                    alt="YouTube"
+                  />
+                </a>
+                <a href="#" class="footer__social-link" aria-label="WhatsApp">
+                  <img
+                    src="../assets/images/footer/whatsapp.svg"
+                    alt="WhatsApp"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <nav class="footer__quick-links" aria-label="Quick links">
+              <h5 class="footer__nav-title">Quick Links</h5>
+              <ul class="footer__nav-list">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Payment Terms</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and conditions</a></li>
+              </ul>
+            </nav>
+
+            <!-- Parents Portal -->
+            <nav class="footer__parents-portal" aria-label="Parents portal">
+              <h5 class="footer__nav-title">Parents Portal</h5>
+              <ul class="footer__nav-list">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Student Login</a></li>
+                <li><a href="#">Parent Login ManageBac</a></li>
+                <li><a href="#">Parent Login SchoolsBuddy</a></li>
+                <li><a href="#">Teacher Login</a></li>
+              </ul>
+            </nav>
+
+            <!-- Address -->
+            <address class="footer__address" style="font-style: normal">
+              <h5 class="footer__nav-title">Address</h5>
+              <p class="footer__address-text">
+                47th St - Al Khawaneej -<br />
+                Al Khawaneej 1 - Dubai -<br />
+                United Arab Emirates.
+              </p>
+            </address>
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              &copy; 2026 Dar Al Marefa. All rights reserved.
+            </p>
+            <a href="#" class="footer__secondary-logo" aria-label="Al Ghurair">
+              <img
+                src="../assets/images/footer/AlGhurair-logo.png"
+                alt="Al Ghurair logo"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__bottom-artwork" aria-hidden="true">
+          <img src="../assets/images/footer/artwork-bottom.png" alt="" />
+        </div>
+      </footer>
+    </div>
+
+    <!-- Attached JavaScript Files -->
+    <script src="../js/vendor/jquery_v3.7.1.min.js"></script>
+    <script src="../js/vendor/gsap.min.js"></script>
+    <script src="../js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="../js/vendor/ScrollTrigger.min.js"></script>
+    <script src="../js/home-page-carousel.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dar Al Marefa School Website</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles-ar.css" />
+    <link rel="stylesheet" href="../css/intlTelInput.css">
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+
+  <body>
+    <div class="beyond-the-classroom--overview-arabic">
+      <div class="beyond-the-classroom--overview">
+        <section class="admission-hero">
+          <div class="admission-hero__tree-bg" aria-hidden="true"></div>
+          <div class="admission-hero__tree-bg-mobile">
+            <img
+              src="../assets/images/beyond-the-classroom-overview/background-leaf-mobile.png"
+              alt="Colorful Leaves"
+            />
+          </div>
+          <div class="about-us-main-texts abt_our_team_banner">
+            <h2 class="about-us-main-overview abt_daralmarefa_banner_hd">
+              <span class="banner_thin_txt">نظرة</span> عامة
+            </h2>
+            <p class="about-us-main-about-us">ما وراء الفصل الدراسي</p>
+          </div>
+
+          <div class="colorful-leaf-divider-container">
+            <div class="admission-hero__leaf-divider">
+              <img
+                src="../assets/images/colorful-leaves-divider/colorful-leaves.png"
+                alt="Colorful Leaves"
+              />
+            </div>
+          </div>
+
+          <!-- Horizontally scrollable pill navigation -->
+          <div class="admission-pill-nav-wrap">
+            <nav
+              class="admission-pill-nav"
+              role="tablist"
+              aria-label="Admission sections"
+            >
+              <a href="admission-process.html" class="admission-pill-nav__btn"
+                >القيادة الطلابية</a
+              >
+              <a href="#" class="admission-pill-nav__btn">الأنشطة اللامنهجية</a>
+              <a href="tuition-fees.html" class="admission-pill-nav__btn"
+                >أنشطة التربية البدنية والرياضة</a
+              >
+              <a href="#" class="admission-pill-nav__btn"
+                >وجبات الغداء المدرسية</a
+              >
+              <a href="#" class="admission-pill-nav__btn"
+                >الفعاليات والاحتفالات الثقافية</a
+              >
+            </nav>
+          </div>
+        </section>
+
+        <section
+          class="welcome_section abt_daralmarefa_welcome abt_team_welcome book_tour_form_section book_tour_main_sec"
+        >
+          <div class="our-curriculum-heading">
+            <h3 class="typography-h3">
+              ما وراء الفصل الدراسي في <strong>دار المعرفة</strong>
+            </h3>
+          </div>
+
+          <div class="our-curriculum-sub-container mb-50">
+            <p>
+              تُعدّ القيادة جزءًا أساسيًا من منهجنا التعليمي، إذ تُشجع الطلاب
+              على تنمية شخصياتهم وثقتهم بأنفسهم وشعورهم بالهدف. ومن خلال الأدوار
+              القيادية الرسمية، وبرامج الإثراء، والأنشطة اللامنهجية، يتعلم
+              الطلاب القيادة بنزاهة، والعمل بروح الفريق، والمساهمة بفعالية في
+              المدرسة والمجتمع ككل.
+            </p>
+          </div>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section
+          class="our-school-glance-main-container abt_welcome_video_section"
+        >
+          <div class="custom_container">
+            <div class="our-school-glance abt_welcome_video">
+              <div class="our-school-glance__video-wrapper" id="osgWrapper">
+                <!-- Replace src with your actual video file -->
+
+                <video
+                  class="our-school-glance__video"
+                  id="osgVideo"
+                  src="../assets/videos/hero-section/hero-section-video.mp4"
+                  preload="metadata"
+                  playsinline=""
+                  poster="../assets/images/ABOUT-US/abt_welcome_video.png"
+                ></video>
+                <!-- Gradient overlay -->
+                <div class="our-school-glance__overlay"></div>
+                <!-- Heading text -->
+
+                <!-- Play button  –  uses play-button.svg you'll upload -->
+                <button
+                  class="our-school-glance__play-btn"
+                  id="osgPlayBtn"
+                  aria-label="Play video"
+                >
+                  <img
+                    src="../assets/images/our-school-glance/play-button-updated.png"
+                    alt="Play"
+                  />
+                </button>
+                <!-- Invisible pause area (full card click while playing) -->
+                <div
+                  class="our-school-glance__pause-area"
+                  id="osgPauseArea"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+       <!-- Attached JavaScript Files -->
+    <script src="../js/vendor/jquery_v3.7.1.min.js"></script>
+    <script src="../js/vendor/slick.min.js"></script>
+    <script src="../js/vendor/slick-animation.js"></script>
+    <script src="../js/vendor/gsap.min.js"></script>
+    <script src="../js/vendor/ScrollToPlugin.min.js"></script>
+    <script src="../js/vendor/ScrollTrigger.min.js"></script>
+    <script src="../js/homepage/hero-scroll-to-ib-section.js"></script>
+   <!-- <script src="./js/homepage/campus-reveal.js"></script> -->
+    <script src="../js/homepage/ib-bilingual-school.js"></script>
+    <script src="../js/homepage/our-curriculum.js"></script>
+    <script src="../js/homepage/social-wall-slider.js"></script>
+    <script src="../js/homepage/our-school-at-glance.js"></script>
+    <script src="../js/home-page-carousel.js"></script>
+    <script src="../js/vendor/intlTelInput.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

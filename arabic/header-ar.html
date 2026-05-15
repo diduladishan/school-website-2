@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>مدرسة دار المعرفة</title>
+       <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles-ar.css" />
+    <link rel="stylesheet" href="../css/intlTelInput.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header-arabic">
+      <!-- Header and Hero Section -->
+      <section class="admission-hero">
+        <div class="admission-hero__tree-bg" aria-hidden="true"></div>
+
+        <!-- Navbar -->
+        <nav class="hero__nav inner-page-nav hero__nav--rtl">
+          <!-- Menu button (leftmost in RTL) -->
+          <!-- <button
+            class="marefa-menu-close-btn marefa-menu-close-btn-wrapper"
+            aria-label="فتح القائمة"
+            onclick="
+              document
+                .getElementById('marefaMenu')
+                .classList.add('marefa-menu-open')
+            "
+          >
+            <img
+              src="../assets/images/COMMUNITY-OVERVIEW/menu-button-HQ.png"
+              alt="القائمة"
+            />
+          </button> -->
+
+          <div
+            class="home-page-main-btn-container"
+            onclick="
+              document
+                .getElementById('marefaMenu')
+                .classList.add('marefa-menu-open')
+            "
+          >
+            <div class="home-page-main-btn-circle"></div>
+            <img
+              class="home-page-main-btn-img"
+              src="../assets/images/COMMUNITY-OVERVIEW/button-black-border-with-white-lines.svg"
+              alt="Menu button"
+            />
+          </div>
+
+          <!-- Search + Language (next to menu button in RTL) -->
+          <div class="nav-links-search-gap hero__nav--rtl-search">
+            <div class="hero-divider-n-text">
+              <div class="hero__search-wrap">
+                <img
+                  src="../assets/images/ABOUT-US/search-icon-svg.svg"
+                  alt="بحث"
+                  class="hero-search-icon"
+                />
+              </div>
+
+              <!-- Divider + English language toggle -->
+              <div class="hero__nav-divider"></div>
+              <span class="hero__arabic"><a href="#">English</a></span>
+            </div>
+
+            <!-- Nav links (desktop) -->
+            <ul class="hero__nav-links hero__nav-links--ar">
+             <li>
+  <a href="#">الاستفسارات</a>
+  <img
+    class="nav-hover-icon"
+    src="../assets/images/hero-section/nav-hover-01.png"
+    alt="leaf-hover"
+  />
+</li>
+              <li>
+                <a href="#">تواصل معنا</a>
+                <img
+                  class="nav-hover-icon"
+                  src="../assets/images/hero-section/nav-hover-02.png"
+                  alt="leaf-hover"
+                />
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero__nav-spacer"></div>
+
+          <!-- Logos (rightmost in RTL) -->
+          <div class="hero__logos">
+            <img
+              class="hero__logo-colegio-del-mundo"
+              src="../assets/images/ABOUT-US/colegio-del-mundo-svg.svg"
+              alt="Colegio del Mundo IB"
+            />
+            <div class="hero__logo-divider"></div>
+            <a href="./index-ar.html"
+              ><img
+                class="hero__logo"
+                src="../assets/images/ABOUT-US/Marefa-logo-svg.svg"
+                alt="دار المعرفة"
+              />
+            </a>
+          </div>
+        </nav>
+      </section>
+
+      <!-- MENU START HERE -->
+      <!-- ===== MAREFA MENU OVERLAY ===== -->
+
+      <div>
+        <div class="marefa-menu-overlay" id="marefaMenu">
+          <div class="marefa-menu-overlay-container">
+            <div class="marefa-menu-inner">
+              <!-- Background image (palm trees) -->
+              <div class="marefa-menu-bg-img-container-desktop">
+                <img
+                  src="../assets/images/menu/menu-background-image-red.png"
+                  alt=""
+                  class="marefa-menu-bg-img"
+                />
+              </div>
+
+              <div class="marefa-menu-bg-img-container-mobile-tablet">
+                <img
+                  src="../assets/images/menu/menu-background-image-red-tablet-5-ar.png"
+                  alt=""
+                  class="marefa-menu-bg-img-tablet"
+                />
+              </div>
+
+              <div class="marefa-menu-bg-img-container-mobile">
+                <img
+                  src="../assets/images/menu/menu-background-image-mobile-v2-red.png"
+                  alt=""
+                  class="marefa-menu-bg-img-mobi"
+                />
+              </div>
+
+              <!-- Sand wave at bottom -->
+              <!-- <div class="marefa-menu-wave"></div> -->
+
+              <!-- TOP BAR -->
+              <div class="marefa-menu-topbar-red">
+                <!-- Logo -->
+
+                <div class="header-logo-containers">
+                  <img
+                    src="../assets/images/menu/marefa-logo-white-HQ.svg"
+                    alt="Dar Al Marefa"
+                    class="marefa-menu-logo"
+                  />
+
+                  <!-- <img src="./assets/images/MENU-1/colegio-del-mundo.png" alt="Dar Al Marefa" class="colegio-del-mundo" /> -->
+                </div>
+
+                <!-- Right side of top bar -->
+                <div class="marefa-menu-topbar-right">
+                  <!-- Desktop only: ENQUIRE + CONTACT -->
+                  <div class="marefa-menu-toplinks-red">
+                    <a href="#">استفسار</a>
+                    <a href="#">اتصل</a>
+                  </div>
+
+                  <!-- Search + Lang + Close -->
+                  <div class="marefa-menu-topbar-actions">
+                    <div class="marefa-menu-search-n-a-text">
+                      <button
+                        class="marefa-menu-search-btn"
+                        aria-label="Search"
+                      >
+                        <img
+                          src="../assets/images/menu/search-icon-white.svg"
+                          alt="Search"
+                        />
+                      </button>
+
+                      <div class="marefa-menu-divider"></div>
+                      <a href="#" class="marefa-menu-lang-red">العربية</a>
+                    </div>
+
+                    <!-- Close button inside the red menu -->
+                    <!-- <button
+                      class="marefa-menu-close-btn"
+                      aria-label="Close menu"
+                      onclick="closeMarefaMenu()"
+                    >
+                      <img
+                        src="../assets/images/menu/menu-button-white-HQ.png"
+                        alt="Close"
+                      />
+                    </button> -->
+
+                    <div
+                      class="home-page-main-btn-container"
+                      aria-label="Close menu"
+                      onclick="closeMarefaMenu()"
+                    >
+                      <div class="home-page-main-btn-circle-menu"></div>
+                      <img
+                        class="home-page-main-btn-img"
+                        src="../assets/images/menu/button-white-border-with-white-lines.svg"
+                        alt="Menu button"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MAIN CONTENT -->
+              <div class="marefa-menu-content">
+                <!-- LEFT: Rotated label + Nav -->
+                <div class="marefa-menu-left">
+                  <div class="marefa-menu-label">القائمة</div>
+                  <nav class="marefa-menu-nav">
+                    <a href="#" class="marefa-menu-active">الرئيسية</a>
+                    <a href="#">من نحن</a>
+                    <a href="#">القبول</a>
+                    <a href="#">الأكاديميات</a>
+                    <a href="#">ما وراء الفصل الدراسي</a>
+                    <a href="#">حياة المدرسة</a>
+                    <a href="#">الحرم الجامعي والمرافق</a>
+                    <a href="#">المجتمع</a>
+                    <a href="#">منطقة أولياء الأمور</a>
+                    <a href="#">صوت DMS</a>
+                    <a href="#">المهنة</a>
+                    <a href="#">اتصل</a>
+
+                    <div class="bottom-menu-icons-ctr">
+                      <a href="#">
+                        <img
+                          src="../assets/images/menu/contact-icon-white.svg"
+                          alt="bottom-menu-icons"
+                        />
+                      </a>
+
+                      <a href="#">
+                        <img
+                          src="../assets/images/menu/location-icon-white.svg"
+                          alt="bottom-menu-icons"
+                      /></a>
+
+                      <a href="#">
+                        <img
+                          src="../assets/images/menu/phone-icon-white.svg"
+                          alt="bottom-menu-icons"
+                      /></a>
+                    </div>
+                  </nav>
+                </div>
+
+                <!-- SEPARATOR (desktop only) -->
+                <div class="marefa-menu-separator"></div>
+
+                <!-- RIGHT: Contact info -->
+                <div class="marefa-menu-right">
+                  <div class="marefa-menu-contacts-grid">
+                    <div class="marefa-menu-contact-item">
+                      <div class="marefa-menu-contact-text">
+                        <span class="marefa-menu-contact-label"
+                          >للقبول والتسجيل</span
+                        >
+                        <a
+                          href="mailto:contact@daralmarefa.com"
+                          class="marefa-menu-contact-value"
+                          >contact@daralmarefa.com</a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="marefa-menu-contact-item">
+                      <div class="marefa-menu-contact-text">
+                        <span class="marefa-menu-contact-label"
+                          >للاتصال بالمدير</span
+                        >
+                        <a
+                          href="mailto:principal@daralmarefa.ae"
+                          class="marefa-menu-contact-value"
+                          >principal@daralmarefa.ae</a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="marefa-menu-contact-item">
+                      <div class="marefa-menu-contact-text">
+                        <span class="marefa-menu-contact-label"
+                          >استفسارات التسويق</span
+                        >
+                        <a
+                          href="mailto:marketing@daralmarefa.ae"
+                          class="marefa-menu-contact-value"
+                          >marketing@daralmarefa.ae</a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="marefa-menu-contact-item">
+                      <div class="marefa-menu-contact-text">
+                        <span class="marefa-menu-contact-label"
+                          >للاستفسارات الأخرى</span
+                        >
+                        <a
+                          href="mailto:info@daralmarefa.ae"
+                          class="marefa-menu-contact-value"
+                          >info@daralmarefa.ae</a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="marefa-menu-contact-item">
+                      <div class="marefa-menu-contact-text">
+                        <span class="marefa-menu-contact-label">العنوان</span>
+                        <a href="#" class="marefa-menu-contact-value"
+                          >marketing@daralmarefa.ae</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /marefa-menu-content -->
+            </div>
+            <!-- /marefa-menu-inner -->
+          </div>
+        </div>
+      </div>
+
+      <!-- /marefa-menu-overlay -->
+    </div>
+
+    <script>
+      function closeMarefaMenu() {
+        const menu = document.getElementById("marefaMenu");
+        menu.classList.add("marefa-menu-closing");
+        menu.addEventListener("animationend", function handler() {
+          menu.classList.remove("marefa-menu-open", "marefa-menu-closing");
+          menu.removeEventListener("animationend", handler);
+        });
+      }
+    </script>
+  </body>
+</html>
