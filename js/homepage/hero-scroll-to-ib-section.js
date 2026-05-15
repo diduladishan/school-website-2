@@ -227,14 +227,12 @@
     { passive: false },
   );
 
-  // ─── Touch (real mobile devices) ─────────────────────────────────────────────
-// ─── Touch (real mobile devices) ─────────────────────────────
-
-const SWIPE_THRESHOLD = 50;
+  const SWIPE_THRESHOLD = 10; // Detect intent early, before browser scrolls
 
 let touchStartY = 0;
 let touchStartX = 0;
 let touchTriggered = false;
+let touchIntentLocked = false; // true = we own this gesture
 
 window.addEventListener(
   "touchstart",
@@ -242,8 +240,9 @@ window.addEventListener(
     touchStartY = e.touches[0].clientY;
     touchStartX = e.touches[0].clientX;
     touchTriggered = false;
+    touchIntentLocked = false;
   },
-  { passive: true },
+  { passive: true }, // touchstart can stay passive
 );
 
 window.addEventListener(
@@ -251,66 +250,78 @@ window.addEventListener(
   function (e) {
     if (reduceMotion) return;
     if (isCampusRevealLocked()) return;
-    if (lockScroll) return;
-    if (touchTriggered) return;
 
     const currentY = e.touches[0].clientY;
     const currentX = e.touches[0].clientX;
-
     const deltaY = touchStartY - currentY;
     const deltaX = touchStartX - currentX;
 
     // Ignore horizontal swipes
     if (Math.abs(deltaX) > Math.abs(deltaY)) return;
 
-    // Ignore tiny swipes
+    // Once we've decided to own this gesture, keep blocking native scroll
+    if (touchIntentLocked) {
+      e.preventDefault();
+      return;
+    }
+
+    // Not enough movement yet
     if (Math.abs(deltaY) < SWIPE_THRESHOLD) return;
+
+    if (lockScroll) {
+      // Already animating — block native scroll for the rest of this gesture
+      touchIntentLocked = true;
+      e.preventDefault();
+      return;
+    }
+
+    if (touchTriggered) return;
 
     const y = window.scrollY;
     const pastHero = y >= endOfHero() - 2;
 
-    // Prevent native scrolling
-    e.preventDefault();
-
-    touchTriggered = true;
-
-    /* Swipe up → IB landing */
-    if (deltaY > 0 && !pastHero) {
-      animateWindowScrollTo(
-        scrollYAtArtworkPngStart(),
-        "to-ib-from-top",
-      );
-      return;
-    }
-
-    /* Swipe up → M logo */
     const ibScrolled = document.querySelector(
       ".ib-bilingual-school-leaf-scrolled",
     );
 
-    if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
-      animateWindowScrollTo(
-        scrollYAtMLogoStart(),
-        "to-mlogo",
-      );
-      return;
-    }
+    let handled = false;
 
-    /* Swipe down → IB landing */
-    if (deltaY < 0 && isAtMLogo()) {
-      animateWindowScrollTo(
-        scrollYAtArtworkPngStart(),
-        "to-ib-from-bottom",
-      );
-      return;
+    /* Swipe up (finger moves up = scroll down) → IB landing */
+    if (deltaY > 0 && !pastHero) {
+      animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-top");
+      handled = true;
     }
-
+    /* Swipe up → M logo */
+    else if (deltaY > 0 && isAtIbLanding() && ibScrolled) {
+      animateWindowScrollTo(scrollYAtMLogoStart(), "to-mlogo");
+      handled = true;
+    }
+    /* Swipe down (finger moves down = scroll up) → IB landing */
+    else if (deltaY < 0 && isAtMLogo()) {
+      animateWindowScrollTo(scrollYAtArtworkPngStart(), "to-ib-from-bottom");
+      handled = true;
+    }
     /* Swipe down → Hero */
-    if (deltaY < 0 && pastHero && isAtIbLanding()) {
+    else if (deltaY < 0 && pastHero && isAtIbLanding()) {
       animateWindowScrollTo(0, "to-hero");
-      return;
+      handled = true;
+    }
+
+    if (handled) {
+      touchTriggered = true;
+      touchIntentLocked = true;
+      e.preventDefault(); // Block native scroll immediately
     }
   },
-  { passive: false },
+  { passive: false }, // MUST be false to allow preventDefault
+);
+
+window.addEventListener(
+  "touchend",
+  function () {
+    touchIntentLocked = false;
+    touchTriggered = false;
+  },
+  { passive: true },
 );
 })();
